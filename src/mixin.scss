@@ -5,6 +5,6 @@
     flex-direction: $direction;
 }
 
-@mixin margin-left(){
-  margin-left: 120px;
+@mixin content-padding(){
+  padding: 5% 10% 0;
 }
