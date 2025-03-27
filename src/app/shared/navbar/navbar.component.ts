@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  activeButton: string | null = null;
+  isFixed = false;
+  navbarHeight = 60; // Geschätzte Höhe deiner Navbar in px
 
+  setActive(buttonName: string) {
+    this.activeButton = buttonName;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const viewportHeight = window.innerHeight;
+    const documentHeight = document.body.scrollHeight;
+
+    // Berechnet wann die Navbar den oberen Rand erreicht
+    const shouldFix = scrollPosition > (documentHeight - viewportHeight - this.navbarHeight);
+
+    this.isFixed = shouldFix;
+    document.body.classList.toggle('scrolled', shouldFix);
+  }
 }

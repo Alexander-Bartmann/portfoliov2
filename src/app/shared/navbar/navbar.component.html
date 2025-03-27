@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<nav>
+  <section>
+    <img src="" alt="test">
+    <p>A.Bartmann</p>
+    <p>developer</p>
+  </section>
+  <section>
+    <button
+      [class.active]="activeButton === 'whyMe'"
+      (click)="setActive('whyMe')"
+    >Why me</button>
+
+    <button
+      [class.active]="activeButton === 'skills'"
+      (click)="setActive('skills')"
+    >Skills</button>
+
+    <button
+      [class.active]="activeButton === 'projects'"
+      (click)="setActive('projects')"
+    >Projects</button>
+
+    <button
+      [class.active]="activeButton === 'contact'"
+      (click)="setActive('contact')"
+    >Contact</button>
+  </section>
+  <div>
+    <button>DE</button>
+    <button>EN</button>
+  </div>
+
+</nav>

@@ -1,4 +1,9 @@
-*{
+.content-container{
   padding: 5% 10%;
-  display: flex;
 }
+
+app-navbar {
+  display: block;
+  width: 100%;
+}
+
