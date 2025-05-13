@@ -1,1 +1,25 @@
-<p>my-skills works!</p>
+<main>
+  <h1>My Skills</h1>
+  <section>
+    <div class="skills">
+      @for (skill of skills; track skill.name) {
+        <div class="skill-card">
+          <img [src]="skill.img" [alt]="skill.name + ' logo'">
+          <p>{{ skill.name }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="learning">
+      <img src="img/Skill-Ellipse.png" alt="Ellipse" class="ellipse">
+
+      <div class="logos">
+        <p>I am currently learning</p>
+        <img src="img/react.png" alt="React">
+        <img src="img/vue.png" alt="Vue">
+      </div>
+    </div>
+
+
+  </section>
+</main>
