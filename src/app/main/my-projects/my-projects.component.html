@@ -1,1 +1,60 @@
-<p>my-projects works!</p>
+<section class="projects">
+  <h1>My Projects</h1>
+
+  <!-- Tabs -->
+  <div class="tab-container">
+    @for (project of projects; track project.id; let index = $index) {
+      <button
+        class="tab-button"
+        [class.active]="activeProject === index"
+        (click)="activeProject = index">
+        {{ project.name }}
+      </button>
+    }
+  </div>
+
+  <!-- Aktives Projekt -->
+  <div class="project-card">
+    <div class="card-content">
+      <!-- Linke Seite: Description-Blocks -->
+      <div class="left-column">
+        @for (block of projects[activeProject].contentBlocks; let index = $index; track block.title) {
+          <div class="content-section">
+            <div class="title-row">
+              <img [src]="block.ellipseImg" alt="Icon" class="ellipse-icon">
+              <h3>{{ block.title }}</h3>
+              <!-- Duration nur beim ersten Block -->
+              @if (index === 0) {
+                <span class="duration">{{ projects[activeProject].duration }}</span>
+              }
+            </div>
+            <p>{{ block.description }}</p>
+          </div>
+        }
+      </div>
+
+      <!-- Rechte Seite -->
+      <div class="right-column">
+        <div class="tech-stack">
+          <p>Technologies</p>
+          <div class="tech-icons">
+            @for (tech of projects[activeProject].techStack; track tech.name) {
+              <img [src]="tech.img" [alt]="tech.name">
+            }
+          </div>
+        </div>
+
+        <img class="project-img" [src]="projects[activeProject].projectImg" alt="Project Preview" />
+
+        <div class="buttons">
+          <a [href]="projects[activeProject].liveUrl" target="_blank">
+            <button>Live Test</button>
+          </a>
+          <a [href]="projects[activeProject].githubUrl" target="_blank">
+            <button>GitHub</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

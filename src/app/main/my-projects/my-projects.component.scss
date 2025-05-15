@@ -1,0 +1,138 @@
+@import './../../../variables.scss';
+@import './../../../mixin.scss';
+
+.projects {
+  color: white;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $secondary;
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  .tab-container {
+    @include display($justify: start, $direction: row);
+    gap: 1rem;
+    padding: 64px 0 0 64px;
+
+    .tab-button {
+      background-color: $main;
+      border: 1px solid $main;
+      border-bottom: none;
+      border-radius: 32px 32px 0 0;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: $secondary;
+      font-size: 2rem;
+
+      &.active {
+        background: $lightgrey;
+        color: white;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .project-card {
+    background: $lightgrey;
+    border: 1px solid $lightgrey;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding-left: 64px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+
+    .card-content {
+      @include display($direction: row);
+      gap: 2rem;
+
+      .left-column {
+        flex: 2;
+
+        .content-section {
+          padding: 1rem;
+
+          .title-row {
+            @include display($justify:start, $direction: row);
+            gap: 0.5rem;
+
+            h3 {
+              margin: 0;
+              font-size: 1.5rem;
+            }
+
+            .duration {
+              margin-left: auto;
+              font-size: 0.9rem;
+            }
+
+            .ellipse-icon {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          p {
+            font-size: 0.95rem;
+          }
+        }
+      }
+
+      .right-column {
+        flex: 1;
+        @include display();
+        gap: 1rem;
+
+        .tech-stack {
+          p {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+          }
+
+          .tech-icons {
+            @include display($direction: row);
+            gap: 0.5rem;
+
+            img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        }
+
+        .project-img {
+          width: 100%;
+          border-radius: 8px;
+        }
+
+        .buttons {
+          @include display($direction: row);
+          gap: 0.5rem;
+
+          button {
+            background-color: #007bff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+
+          a {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
