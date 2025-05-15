@@ -7,22 +7,22 @@
   <section>
     <button
       [class.active]="activeButton === 'whyMe'"
-      (click)="setActive('whyMe')"
+      (click)="navigateTo('whyMe')"
     >Why me</button>
 
     <button
       [class.active]="activeButton === 'skills'"
-      (click)="setActive('skills')"
+      (click)="navigateTo('skills')"
     >Skills</button>
 
     <button
       [class.active]="activeButton === 'projects'"
-      (click)="setActive('projects')"
+      (click)="navigateTo('projects')"
     >Projects</button>
 
     <button
       [class.active]="activeButton === 'contact'"
-      (click)="setActive('contact')"
+      (click)="navigateTo('contact')"
     >Contact</button>
   </section>
   <div>
