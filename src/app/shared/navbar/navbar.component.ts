@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
-  activeButton: string | null = null;
+export class NavbarComponent implements AfterViewInit {
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  originalOffsetTop!: number;
+
+    activeButton: string | null = null;
 
   // Kombinierte Methode
   navigateTo(sectionId: string): void {
@@ -19,6 +23,22 @@ export class NavbarComponent {
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
       window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  ngAfterViewInit() {
+    // Warte bis die View geladen ist, dann berechne Offset
+    this.originalOffsetTop = this.el.nativeElement.getBoundingClientRect().top + window.scrollY;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll >= this.originalOffsetTop) {
+      this.renderer.addClass(this.el.nativeElement, 'fixed-navbar');
+    } else {
+      this.renderer.removeClass(this.el.nativeElement, 'fixed-navbar');
     }
   }
 }
