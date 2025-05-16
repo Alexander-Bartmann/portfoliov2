@@ -16,14 +16,11 @@
 }
 
   nav {
-    @include display($justify: space-between, $direction: unset);
+    @include display($justify: space-around, $direction: unset);
     margin: 0 auto;
     z-index: 1000;
     background-color: $secondary;
     height: 15vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     font-size: 26px;
     font-family: 'josefin sans';
     color: #262E34;
