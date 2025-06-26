@@ -37,8 +37,8 @@ export class MyProjectsComponent {
       { name: 'Firebase', img: 'img/firebase.png' }
     ],
     projectImg: 'img/Join.png',
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/Alexander-Bartmann/Join'
+    liveUrl: 'https://alexander-bartmann.de/Join',
+    githubUrl: 'https://github.com/Alexander-aartmann/Join'
   },
   {
     id: 2,
@@ -67,7 +67,7 @@ export class MyProjectsComponent {
       { name: 'CSS', img: 'img/css.png' }
     ],
     projectImg: 'img/pollo-loco.png',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://alexander-bartmann.de/PolloLoco',
     githubUrl: 'https://github.com/Alexander-Bartmann/PolloLoco'
   },
   {
@@ -96,7 +96,7 @@ export class MyProjectsComponent {
       { name: 'JavaScript', img: 'img/Javascript.png' }
     ],
     projectImg: 'img/Pokedex.png',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://alexander-bartmann.de/Pokedex',
     githubUrl: 'https://github.com/Alexander-Bartmann/Pokedex'
   },
   ]
