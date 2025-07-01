@@ -1,0 +1,90 @@
+{
+  "contact": {
+    "title": "Kontaktiere mich",
+    "intro": "Wenn dir gefällt, was du siehst, lass uns reden! Ob Job, Projekt oder Feedback. Ich würde mich freuen, von dir zu hören.",
+    "name": "Dein Name",
+    "email": "Deine E-Mail",
+    "message": "Deine Nachricht",
+    "privacyPolicy": "Ich habe die Datenschutzbestimmungen gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "send": "Nachricht senden",
+    "sending": "Nachricht wird gesendet..."
+  },
+
+  "navbar": {
+    "whyMe": "Warum ich?",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+
+  "hero": {
+    "jobdescription": "Frontend-Entwickler"
+  },
+
+  "myProjects": {
+    "title": "Meine Projekte",
+    "technologies": "Technologien",
+    "join": {
+      "name": "1. Join",
+      "duration": "8 Wochen",
+      "aboutTitle": "Über das Projekt",
+      "aboutDescription": "Task Manager inspiriert vom Kanban System. Erstelle und organisiere Aufgaben, nutze Drag & Drop, weise Benutzer und Kategorien zu.",
+      "processTitle": "So habe ich meinen Arbeitsprozess organisiert",
+      "processDescription": "Wir haben unsere Aufgaben mit Trello geplant und verfolgt. Jede Aufgabe wurde einem von uns zugewiesen und wanderte durch Spalten wie 'To Do', 'In Progress' und 'Done'.",
+      "experienceTitle": "Meine Erfahrung in der Gruppenarbeit",
+      "experienceDescription": "Ich habe in einem Zweierteam gearbeitet. Wir haben die Arbeit gleichmäßig aufgeteilt und regelmäßig kommuniziert."
+    },
+    "pollo": {
+      "name": "2. Pollo Loco",
+      "duration": "5 Wochen",
+      "aboutTitle": "Über das Projekt",
+      "aboutDescription": "Ein Jump-and-Run-Spiel, bei dem Pepe Münzen und Salsa-Flaschen sammelt, um gegen das böse Huhn zu kämpfen.",
+      "processTitle": "So habe ich meinen Arbeitsprozess organisiert",
+      "processDescription": "Ich habe das Spiel in Module wie Bewegung, Kollisionserkennung und Item-Sammlung aufgeteilt und diese mit objektorientiertem Ansatz entwickelt.",
+      "learnedTitle": "Was ich gelernt habe",
+      "learnedDescription": "Tiefere Einblicke in Canvas-Animationen, frame-basierte Logik und Strukturierung mit Klassen in JavaScript."
+    },
+    "pokedex": {
+      "name": "3. Pokedex",
+      "duration": "2 Wochen",
+      "aboutTitle": "Über das Projekt",
+      "aboutDescription": "Ein Pokédex, der Daten aus einer öffentlichen API lädt und Informationen zu jedem Pokémon anzeigt.",
+      "processTitle": "So habe ich meinen Arbeitsprozess organisiert",
+      "processDescription": "API-Struktur analysiert, Layout geplant, Features nacheinander entwickelt und mit To-Do-Listen verfolgt.",
+      "learnedTitle": "Was ich gelernt habe",
+      "learnedDescription": "Besseres Verständnis von asynchronem JavaScript, Arbeit mit APIs und dynamischem Rendering im Frontend."
+    }
+  },
+
+  "mySkills":{
+    "title": "Meine Fähigkeiten",
+    "learning": "Ich lerne gerade"
+  },
+
+  "references": {
+    "title": "Brauchst du einen Teamplayer? Das sagen meine Kolleg:innen über mich",
+    "projectLabel": "Projekt:",
+    "finn": {
+      "name": "Finn G.",
+      "project": "Join",
+      "text": "Die Zusammenarbeit mit Alex am Join-Projekt war fantastisch. Er arbeitet strukturiert, kommuniziert klar und bringt clevere Lösungen ein."
+    },
+    "lea": {
+      "name": "Lea K.",
+      "text": "Alex hat mir bei meinem Frontend-Projekt sehr geholfen. Seine Tipps zu responsivem Design und Komponentenstruktur waren extrem wertvoll."
+    },
+    "tim": {
+      "name": "Tim R.",
+      "text": "Alex hat in unseren Sessions komplexe Themen klar und verständlich erklärt. Er war immer geduldig und hilfsbereit!"
+    }
+  },
+
+  "whyMe": {
+    "title": "Warum ich?",
+    "location": "Ich bin in Landshut, Deutschland ansässig.",
+    "locationDetails": "Ich bringe eine frische Perspektive, echte Neugier und viel Motivation mit. ",
+    "description": "Frontend-Entwicklung ist für mich mehr als nur Code – es geht darum, Ideen zum Leben zu erwecken und großartige Nutzererlebnisse zu schaffen. Ich lerne schnell, schreibe sauberen Code und finde kreative Lösungen. Mit modernen Technologien wie Angular, TypeScript und Firebase erweitere ich ständig meine Fähigkeiten, um Webanwendungen zu entwickeln, die wirklich einen Unterschied machen.",
+    "contactButton": "Lass uns sprechen"
+  }
+
+}

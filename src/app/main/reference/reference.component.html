@@ -1,15 +1,17 @@
 <section>
-  <h2>Need a team player? Here's what my colleagues said about me</h2>
+  <h2>{{ 'references.title' | translate }}</h2>
 
   <div class="references-wrapper">
-    @for (ref of references; track ref.name) {
+    @for (ref of references; track ref.nameKey) {
       <div class="reference-card">
         <div class="bg-image">
           <img [src]="ref.bgImg" alt="Background ellipse">
           <div class="ref-content">
-            <h3>{{ ref.name }}</h3>
-            <p *ngIf="ref.project" class="project-text"><strong>Project:</strong> {{ ref.project }}</p>
-            <p class="quote">“{{ ref.text }}”</p>
+            <h3>{{ ref.nameKey | translate }}</h3>
+            <p *ngIf="ref.projectKey" class="project-text">
+              <strong>{{ 'references.projectLabel' | translate }}</strong> {{ ref.projectKey | translate }}
+            </p>
+            <p class="quote">“{{ ref.textKey | translate }}”</p>
           </div>
         </div>
       </div>

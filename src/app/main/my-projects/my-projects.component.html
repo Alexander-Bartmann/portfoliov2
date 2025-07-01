@@ -1,5 +1,5 @@
 <section class="projects" id="projects">
-  <h1>My Projects</h1>
+  <h1>{{ 'myProjects.title' | translate }}</h1>
 
   <!-- Tabs -->
   <div class="tab-container">
@@ -8,7 +8,7 @@
         class="tab-button"
         [class.active]="activeProject === index"
         (click)="activeProject = index">
-        {{ project.name }}
+        {{ project.nameKey | translate }}
       </button>
     }
   </div>
@@ -18,17 +18,17 @@
     <div class="card-content">
       <!-- Linke Seite: Description-Blocks -->
       <div class="left-column">
-        @for (block of projects[activeProject].contentBlocks; let index = $index; track block.title) {
+        @for (block of projects[activeProject].contentBlocks; let index = $index; track block.titleKey) {
           <div class="content-section">
             <div class="title-row">
               <img [src]="block.ellipseImg" alt="Icon" class="ellipse-icon">
-              <h3>{{ block.title }}</h3>
+              <h3>{{ block.titleKey | translate }}</h3>
               <!-- Duration nur beim ersten Block -->
               @if (index === 0) {
-                <span class="duration">{{ projects[activeProject].duration }}</span>
+                <span class="duration">{{ projects[activeProject].durationKey | translate }}</span>
               }
             </div>
-            <p>{{ block.description }}</p>
+            <p>{{ block.descriptionKey | translate }}</p>
           </div>
         }
       </div>
@@ -36,7 +36,7 @@
       <!-- Rechte Seite -->
       <div class="right-column">
         <div class="tech-stack">
-          <p>Technologies</p>
+          <p>{{ 'myProjects.technologies' | translate }}</p>
           <div class="tech-icons">
             @for (tech of projects[activeProject].techStack; track tech.name) {
               <img [src]="tech.img" [alt]="tech.name">

@@ -3,10 +3,10 @@
     <!-- Linke Seite mit 2 Bildern übereinander -->
     <div class="left">
       <figure class="background">
-        <img src="img/Ellipse 35.png" alt="Bild 1">
+        <img src="assets/img/Ellipse 35.png" alt="Bild 1">
       </figure>
       <figure class="portrait">
-        <img src="img/Bewerbungsimg transparent.png" alt="Bild 2">
+        <img src="assets/img/Bewerbungsimg transparent.png" alt="Bild 2">
       </figure>
     </div>
 
@@ -16,11 +16,11 @@
             <!-- Mittig links neben den 3 kleinen Bildern -->
             <article>
               <figure>
-                <img src="img/initialen.png" alt="Zentrales Bild">
+                <img src="assets/img/initialen.png" alt="Zentrales Bild">
               </figure>
               <div class="text-group">
                 <p>A.Bartmann</p>
-                <p class="color">Developer</p>
+                <p class="color">{{ 'hero.jobdescription' | translate }}</p>
             </div>
           </article>
           <!-- 3 kleine Bilder am rechten Rand -->
@@ -53,7 +53,7 @@
 
       <!-- Überschriften unten -->
       <h1>Alexander Bartmann</h1>
-      <h2>Frontend Developer</h2>
+      <h2>{{ 'hero.jobdescription' | translate }}</h2>
     </div>
   </section>
 </main>

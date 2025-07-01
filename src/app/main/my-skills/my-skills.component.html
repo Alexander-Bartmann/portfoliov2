@@ -1,5 +1,5 @@
 <main id="skills">
-  <h1>My Skills</h1>
+  <h1>{{ 'mySkills.title' | translate }}</h1>
   <section>
     <div class="skills">
       @for (skill of skills; track skill.name) {
@@ -11,12 +11,12 @@
     </div>
 
     <div class="learning">
-      <img src="img/Skill-Ellipse.png" alt="Ellipse" class="ellipse">
+      <img src="assets/img/Skill-Ellipse.png" alt="Ellipse" class="ellipse">
 
       <div class="logos">
-        <p>I am currently learning</p>
-        <img src="img/react.png" alt="React">
-        <img src="img/vue.png" alt="Vue">
+        <p>{{ 'mySkills.learning' | translate }}</p>
+        <img src="assets/img/react.png" alt="React">
+        <img src="assets/img/vue.png" alt="Vue">
       </div>
     </div>
 

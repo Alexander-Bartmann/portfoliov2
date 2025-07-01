@@ -1,8 +1,8 @@
 <section class="contact-section" id="contact">
-  <h1 class="secondary">Contact me</h1>
+  <h1 class="secondary">{{ 'contact.title' | translate }}</h1>
 
   <div class="contact-intro">
-    <p>If you like what you see, let's talk! Whether it's a job, project, or feedback. I'd love to hear from you.</p>
+    <p>{{ 'contact.intro' | translate }}</p>
     <div class="contact-info">
       <a href="mailto:alexander-bartmann@outlook.de">
       <mat-icon>email</mat-icon>
@@ -18,17 +18,17 @@
   <form (ngSubmit)="onSubmit()" class="contact-form">
     <div class="form-row">
       <div class="form-field" [class.invalid]="isFieldInvalid('name')">
-        <label class="secondary">Your Name</label>
+        <label class="secondary">{{ 'contact.name' | translate }}</label>
         <input type="text" [(ngModel)]="name" name="name">
       </div>
       <div class="form-field" [class.invalid]="isFieldInvalid('email')">
-        <label class="secondary">Your Email</label>
+        <label class="secondary">{{ 'contact.email' | translate }}</label>
         <input type="email" [(ngModel)]="email" name="email">
       </div>
     </div>
 
     <div class="form-field full-width" [class.invalid]="isFieldInvalid('message')">
-      <label class="secondary">Your Message</label>
+      <label class="secondary">{{ 'contact.message' | translate }}</label>
       <textarea rows="5" [(ngModel)]="message" name="message"></textarea>
     </div>
 
@@ -38,14 +38,14 @@
         <span class="custom-checkbox" [class.checked]="agreed">&#10003;</span>
       </label>
       <p>
-        I have read the privacy policy and agree to the processing of my data as outlined.
+        {{ 'contact.privacyPolicy' | translate }}
       </p>
     </div>
 
     <div class="form-actions">
       <button type="submit" class="send-button" [disabled]="isSending">
-        <ng-container *ngIf="!isSending">Send</ng-container>
-        <ng-container *ngIf="isSending">Sending...</ng-container>
+        <ng-container *ngIf="!isSending">{{ 'contact.send' | translate }}</ng-container>
+        <ng-container *ngIf="isSending">{{ 'contact.sending' | translate }}</ng-container>
       </button>
     </div>
   </form>

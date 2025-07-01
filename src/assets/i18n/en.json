@@ -1,0 +1,89 @@
+{
+  "contact": {
+    "title": "Contact Me",
+    "intro": "If you like what you see, let's talk! Whether it's a job, project, or feedback, I'd love to hear from you.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "privacyPolicy": "I have read the privacy policy and agree to the processing of my data as outlined.",
+    "send": "Send Message",
+    "sending": "Sending Message..."
+  },
+
+  "navbar": {
+    "whyMe": "Why Me?",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "jobdescription": "Frontend Developer"
+  },
+
+  "myProjects": {
+    "title": "My Projects",
+    "technologies": "Technologies",
+    "join": {
+      "name": "1. Join",
+      "duration": "8 weeks",
+      "aboutTitle": "About the project",
+      "aboutDescription": "Task manager inspired by the Kanban system. Create and organize tasks, drag & drop, assign users and categories.",
+      "processTitle": "How I organized my work process",
+      "processDescription": "We planned and tracked our tasks using Trello. Each task was assigned and moved through 'To Do', 'In Progress', and 'Done'.",
+      "experienceTitle": "My group work experience",
+      "experienceDescription": "Worked in a team of two developers. We split work equally and communicated regularly about progress and challenges."
+    },
+    "pollo": {
+      "name": "2. Pollo Loco",
+      "duration": "5 weeks",
+      "aboutTitle": "About the project",
+      "aboutDescription": "A jump-and-run game where Pepe collects coins and salsa bottles to fight the evil chicken.",
+      "processTitle": "How I organized my work process",
+      "processDescription": "I broke the game into modules like player movement, collision detection, and item collection, built with an object-oriented approach.",
+      "learnedTitle": "What I have learned",
+      "learnedDescription": "Deeper insights into canvas animations, frame-based logic, and class-based code structuring in JavaScript."
+    },
+    "pokedex": {
+      "name": "3. Pokedex",
+      "duration": "2 weeks",
+      "aboutTitle": "About the project",
+      "aboutDescription": "A Pokédex that loads data from a public API and shows details for each Pokémon.",
+      "processTitle": "How I organized my work process",
+      "processDescription": "Analyzed API structure, planned layout, built features step by step, tracked tasks with to-do lists.",
+      "learnedTitle": "What I have learned",
+      "learnedDescription": "Better understanding of asynchronous JavaScript, APIs, and dynamic frontend rendering."
+    }
+  },
+
+  "mySkills": {
+    "title": "My Skills",
+    "learning": "I am currently learning"
+  },
+
+  "references": {
+    "title": "Need a team player? Here's what my colleagues said about me",
+    "projectLabel": "Project:",
+    "finn": {
+      "name": "Finn G.",
+      "project": "Join",
+      "text": "Working with Alex on the Join project was a fantastic experience. He is structured, communicates well, and brings smart solutions to the table."
+    },
+    "lea": {
+      "name": "Lea K.",
+      "text": "Alex helped me a lot during my frontend project. His input on responsive design and component structure made a huge difference."
+    },
+    "tim": {
+      "name": "Tim R.",
+      "text": "During our sessions, Alex explained complex topics in a clear and friendly way. He was always patient and supportive!"
+    }
+  },
+
+  "whyMe": {
+    "title": "Why Me?",
+    "location": "I am located in Landshut, Germany.",
+    "locationDetails": "I bring a fresh perspective, genuine curiosity, and plenty of motivation.",
+    "description": "Frontend development is more than just code to me, it's about bringing ideas to life and creating great user experiences. I learn quickly, love writing clean code, and enjoy finding creative solutions. With modern technologies like Angular, TypeScript, and Firebase, I'm constantly expanding my skills, aiming to build web applications that really make a difference.",
+    "contactButton": "Let's talk"
+  }
+}
