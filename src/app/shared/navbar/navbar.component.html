@@ -22,8 +22,8 @@
     </button>
   </section>
   <div>
-    <button (click)="switchLanguage('de')">DE</button>
-    <button (click)="switchLanguage('en')">EN</button>
+    <button [class.active]="currentLang === 'de'" (click)="switchLanguage('de')">DE</button>
+    <button [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</button>
   </div>
 
 </nav>

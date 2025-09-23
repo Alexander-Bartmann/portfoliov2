@@ -10,6 +10,10 @@ import { NavigationService } from '../../navigation.service'; // <--- import
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements AfterViewInit {
+  originalOffsetTop!: number;
+  activeButton: string | null = null;
+  currentLang: string = 'de'; // <--- hinzufügen
+
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
@@ -19,10 +23,8 @@ export class NavbarComponent implements AfterViewInit {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');
     translate.use('de');
+    this.currentLang = this.translate.currentLang || 'de'; // <--- initialisieren
   }
-
-  originalOffsetTop!: number;
-  activeButton: string | null = null;
 
   navigateTo(sectionId: string): void {
     this.activeButton = sectionId;
@@ -31,6 +33,7 @@ export class NavbarComponent implements AfterViewInit {
 
   switchLanguage(lang: string): void {
     this.translate.use(lang);
+    this.currentLang = lang; // <--- aktualisieren
   }
 
   ngAfterViewInit() {
