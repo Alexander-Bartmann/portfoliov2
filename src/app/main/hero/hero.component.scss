@@ -77,14 +77,21 @@ main {
               background-repeat: no-repeat;
               height: 380px;
               width: 360px;
-              position: absolute;
-              top: 16%;
-              left: 20%;
+              position: fixed; // Statt absolute
+              top: 30%;
+              left: 50%;
+              transform: translate(-50%, -50%); // Zentriert
               @include display();
               z-index: 4;
               gap: 16px;
               font-size: 1.3rem;
               color: $main;
+
+              @media (max-width: 460px) {
+                width: 300px;
+                height: 300px;
+                top: 35%;
+              }
 
               a{
                 cursor: pointer;
