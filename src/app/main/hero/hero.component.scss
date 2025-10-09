@@ -2,30 +2,138 @@
 @import './../../../mixin.scss';
 
 main {
-  height: 85vh;
+  min-height: 85vh;
   width: 100%;
-  @include display($display: flex);
+  @include display();
 
   > section.content {
     flex: 1;
-    @include display($direction: row);
+    @include display(); // Column für die drei Ebenen
     gap: 20px;
     @include content-padding();
     width: 80%;
 
-    /* Linke Seite */
+    // ===== HEADER-ICONS OBEN =====
+    .header-icons {
+      width: 100%;
+      order: 1; // Ganz oben
+
+      .right-middle {
+        width: 100%;
+        @include display($justify: space-between, $align: end);
+
+        @media (max-width: 768px) {
+          @include display($justify: space-between, $align: start, $direction: unset);
+        }
+
+        article {
+          @include display();
+          position: absolute;
+          bottom: 60%;
+          left: 65%;
+          right: 25%;
+
+          @media (max-width: 768px) {
+            position: unset;
+          }
+
+          figure {
+            margin: 0;
+
+            img {
+              max-width: 60px;
+              height: 60px;
+              border-radius: 50%;
+            }
+          }
+
+          .text-group {
+            text-align: center;
+
+            p {
+              margin: 5px 0;
+              font-size: 0.9rem;
+            }
+
+            .color {
+              color: $secondary;
+            }
+          }
+        }
+
+        aside.right-top {
+          @include display();
+          gap: 15px;
+
+          .menu-container {
+
+            button{
+              display: none; // Standardmäßig ausgeblendet
+            }
+          }
+
+          @media (max-width: 768px) {
+            .menu-container {
+              button{
+                display: block;
+                background-color: $main;
+                border: none;
+                cursor: pointer;
+
+                mat-icon{
+                  color: $font;
+                  font-size: 56px;
+                  width: 56px;
+                  height: 56px;
+                }
+              }
+            }
+          }
+
+
+          figure {
+            margin: 0;
+
+            @media (max-width: 768px) {
+              display: none; // Auf mobilen Geräten ausblenden
+            }
+
+            svg {
+              width: 28px;
+              height: 28px;
+              transition: all 0.2s ease;
+              cursor: pointer;
+
+              &:hover {
+                transform: scale(1.15);
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // ===== WRAPPER FÜR LEFT & RIGHT (Untereinander) =====
+    .content-wrapper {
+      @include display($direction: row, $align: stretch); // Left und Right nebeneinander
+      gap: 20px;
+      flex: 1;
+      width: 100%;
+      order: 2; // Unter dem Header
+    }
+
+    // ===== LINKE SEITE (Foto) =====
     .left {
       flex: 1;
-      @include display($direction: column, $align: center);
+      @include display($direction: column, $align: center, $justify: center);
       position: relative;
-      height: 100%;
-      overflow: hidden;
       max-width: 640px;
 
       figure {
         width: 100%;
         margin: 0;
-        transition: all 2s ease; // Transition für alle Figure-Elemente
+        transition: all 2s ease;
 
         img {
           width: 100%;
@@ -38,14 +146,12 @@ main {
         position: absolute;
         bottom: 0;
         left: 0;
-        z-index: 2;
+        z-index: 1;
         width: 100%;
-        margin-top: -20%;
 
-        // Hover-Effekt nur auf dem background-Bild
         &:hover {
-          transform: rotate(10deg) scale(0.9); // Leichte Rotation + Vergrößerung
-          filter: brightness(0.9) drop-shadow(0 5px 10px rgba(0,0,0,0.2)); // Dunkler + Schatten
+          transform: rotate(10deg) scale(0.9);
+          filter: brightness(0.9) drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
       }
 
@@ -55,81 +161,153 @@ main {
         left: 0;
         z-index: 2;
         width: 100%;
-        margin-top: -20%;
-        pointer-events: none; // Wichtig: Portrait blockiert Hover nicht!
+        pointer-events: none;
+
+        img{
+          @media (max-width: 768px) {
+            border-radius: 0 0 110px 85px;
+
+          }
+        }
+
       }
     }
 
+    // ===== RECHTE SEITE (Überschriften) =====
     .right {
       flex: 1;
-      @include display($direction: column, $align: flex-start, $justify: flex-start);
-      height: 100%;
-      position: relative;
-
-      /* Oberer Teil - Neu strukturiert */
-      .right-middle {
-        width: 100%;
-        @include display($direction: row, $align: flex-start); // Wichtig: align-start
-        margin-top: 0; // Am oberen Rand beginnen
-
-        article {
-          flex: 1;
-          @include display($direction: column, $align: center);
-
-          figure {
-            margin: 0;
-          } img {
-            max-width: 120px; // Etwas kleiner für besseren Fluss
-          }
-
-          .text-group {
-            text-align: center;
-            p {
-              margin: 5px 0;
-              font-size: 0.9rem;
-            }
-            .color{
-              color: $secondary;
-            }
-          }
-        }
-
-        aside.right-top {
-          @include display($direction: column, $align: flex-end);
-          gap: 15px;
-
-          figure {
-            margin: 0;
-            svg {
-              width: 28px;
-              height: 28px;
-              transition: all 0.2s ease;
-
-              &:hover {
-                transform: scale(1.15);
-                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-                fill: $secondary;
-              }
-            }
-          }
-        }
-      }
-
-      /* Unterer Teil - Überschriften */
-      > h1, > h2 {
-        width: 100%;
-        text-align: center;
-        margin: 80px 0 0 0; // Nur oben Margin
-      }
+      @include display($direction: column, $align: center, $justify: center);
 
       h1 {
         font-size: 5rem;
         font-weight: 600;
+        margin: 0;
+        text-align: center;
       }
 
       h2 {
         font-size: 1.3rem;
-        margin-top: 5px;
+        margin-top: 1rem;
+        text-align: center;
+      }
+    }
+  }
+
+  // ===== MOBILE OPTIMIERUNG =====
+  @media (max-width: 768px) {
+    min-height: 100vh;
+
+    > section.content {
+      width: 95%;
+      padding: 1rem;
+      gap: 1rem;
+
+      // Header bleibt oben, aber kompakter
+      .header-icons {
+        .right-middle {
+          padding: 0.5rem 0;
+
+          article {
+            figure img {
+              max-width: 45px;
+              height: 45px;
+            }
+
+            .text-group p {
+              font-size: 0.75rem;
+            }
+          }
+
+          aside.right-top {
+            gap: 10px;
+
+            figure svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+
+      // Content-Wrapper wird zu Column
+      .content-wrapper {
+        flex-direction: column !important;
+        gap: 2rem;
+      }
+
+      // Foto wird kompakter
+      .left {
+        max-width: 100%;
+        height: 40vh;
+        min-height: 300px;
+
+        .background,
+        .portrait {
+          width: 80%;
+          max-width: 280px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      // Überschriften werden kleiner
+      .right {
+        h1 {
+          font-size: 2.5rem !important;
+        }
+
+        h2 {
+          font-size: 1.1rem !important;
+        }
+      }
+    }
+  }
+
+  // Sehr kleine Screens
+  @media (max-width: 480px) {
+    > section.content {
+      .header-icons {
+        .right-middle {
+          article {
+            figure img {
+              max-width: 35px;
+              height: 35px;
+            }
+
+            .text-group p {
+              font-size: 0.65rem;
+            }
+          }
+
+          aside.right-top {
+            gap: 8px;
+
+            figure svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      .left {
+        height: 35vh;
+        min-height: 250px;
+
+        .background,
+        .portrait {
+          max-width: 220px;
+        }
+      }
+
+      .right {
+        h1 {
+          font-size: 2rem !important;
+        }
+
+        h2 {
+          font-size: 1rem !important;
+        }
       }
     }
   }

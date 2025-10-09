@@ -25,6 +25,10 @@
     font-family: 'josefin sans';
     color: #262E34;
 
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     > section:first-child {
       @include display();
       gap: 1rem;

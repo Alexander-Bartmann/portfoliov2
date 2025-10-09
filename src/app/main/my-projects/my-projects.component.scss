@@ -17,6 +17,11 @@
     gap: 1rem;
     padding: 64px 0 0 64px;
 
+        @media (max-width: 768px) {
+          gap: 0;
+          padding: 0;
+        }
+
     .tab-button {
       background-color: $main;
       border: 1px solid $main;
@@ -27,6 +32,11 @@
       transition: all 0.3s ease;
       color: $secondary;
       font-size: 2rem;
+
+        @media (max-width: 768px) {
+          gap: 0;
+          padding: 0;
+        }
 
       &.active {
         background: $lightgrey;
@@ -51,6 +61,10 @@
     .card-content {
       @include display($direction: row);
       gap: 2rem;
+
+      @media (max-width: 768px) {
+        @include display($direction: column);
+      }
 
       .left-column {
         flex: 2;

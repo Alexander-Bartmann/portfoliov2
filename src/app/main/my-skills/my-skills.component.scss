@@ -12,6 +12,10 @@ main{
   >section {
     @include display( $direction: row);
     max-width: 1000px;
+
+        @media (max-width: 768px) {
+          @include display($direction: column);
+        }
     >div{
       flex: 1 1 50%;
     }
