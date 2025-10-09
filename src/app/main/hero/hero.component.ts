@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [TranslateModule , MatIconModule],
+  imports: [TranslateModule, MatIconModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

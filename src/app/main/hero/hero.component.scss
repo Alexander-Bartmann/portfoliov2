@@ -28,10 +28,9 @@ main {
 
         article {
           @include display();
-          position: absolute;
-          bottom: 60%;
-          left: 65%;
+          position: sticky;
           right: 25%;
+          top: 46%;
 
           @media (max-width: 768px) {
             position: unset;
@@ -66,9 +65,34 @@ main {
           gap: 15px;
 
           .menu-container {
+            @include display($align:end);
 
             button{
               display: none; // Standardmäßig ausgeblendet
+            }
+
+            .dropdown{
+              background-image: url("/assets/img/Ellipse 35.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              height: 380px;
+              width: 360px;
+              position: absolute;
+              top: 16%;
+              left: 20%;
+              @include display();
+              z-index: 4;
+              gap: 16px;
+              font-size: 1.3rem;
+              color: $main;
+
+              a{
+                cursor: pointer;
+                &:active{
+                  color: $font;
+                }
+              }
+
             }
           }
 

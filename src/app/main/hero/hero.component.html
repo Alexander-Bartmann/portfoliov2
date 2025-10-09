@@ -19,7 +19,11 @@
         <aside class="right-top">
           <div class="menu-container">
             <button (click)="toggleMenu()">
-              <mat-icon>menu</mat-icon>
+              @if (menuOpen) {
+                <mat-icon>close</mat-icon>
+              } @else {
+                <mat-icon>menu</mat-icon>
+              }
             </button>
 
             @if (menuOpen) {

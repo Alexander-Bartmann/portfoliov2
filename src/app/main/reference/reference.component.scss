@@ -13,6 +13,12 @@ h2{
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem 0;
+
+    @media (max-width: 768px) {
+      flex-wrap: nowrap;
+      overflow: auto;
+      @include display($justify: flex-start, $direction: row);
+    }
 }
 
 .reference-card {
@@ -32,6 +38,10 @@ h2{
       &:hover {
         transform: rotate(30deg);
         filter: brightness(1.5);
+      }
+
+      @media (max-width: 768px) {
+        width: auto;
       }
     }
 
