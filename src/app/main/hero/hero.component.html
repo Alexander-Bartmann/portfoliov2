@@ -28,10 +28,10 @@
 
             @if (menuOpen) {
               <div class="dropdown">
-                <a routerLink="/">Home</a>
-                <a routerLink="/about">Über mich</a>
-                <a routerLink="/projects">Projekte</a>
-                <a routerLink="/contact">Kontakt</a>
+                <a (click)="navigateTo('hero')">Home</a>
+                <a (click)="navigateTo('whyMe')">Über mich</a>
+                <a (click)="navigateTo('projects')">Projekte</a>
+                <a (click)="navigateTo('contact')">Kontakt</a>
               </div>
             }
           </div>

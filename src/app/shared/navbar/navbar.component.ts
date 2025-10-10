@@ -9,44 +9,27 @@ import { NavigationService } from '../../navigation.service'; // <--- import
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewInit {
-  originalOffsetTop!: number;
+export class NavbarComponent {
   activeButton: string | null = null;
-  currentLang: string = 'de'; // <--- hinzufügen
+  currentLang: string = 'de';
 
   constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
     private translate: TranslateService,
-    private navigation: NavigationService // <--- injizieren
+    private navigation: NavigationService
   ) {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');
     translate.use('de');
-    this.currentLang = this.translate.currentLang || 'de'; // <--- initialisieren
+    this.currentLang = this.translate.currentLang || 'de';
   }
 
   navigateTo(sectionId: string): void {
     this.activeButton = sectionId;
-    this.navigation.navigateTo(sectionId); // <-- Service nutzen
+    this.navigation.navigateTo(sectionId);
   }
 
   switchLanguage(lang: string): void {
     this.translate.use(lang);
-    this.currentLang = lang; // <--- aktualisieren
-  }
-
-  ngAfterViewInit() {
-    this.originalOffsetTop = this.el.nativeElement.getBoundingClientRect().top + window.scrollY;
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScroll = window.scrollY;
-    if (currentScroll >= this.originalOffsetTop) {
-      this.renderer.addClass(this.el.nativeElement, 'fixed-navbar');
-    } else {
-      this.renderer.removeClass(this.el.nativeElement, 'fixed-navbar');
-    }
+    this.currentLang = lang;
   }
 }
