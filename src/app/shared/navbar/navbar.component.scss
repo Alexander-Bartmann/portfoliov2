@@ -4,20 +4,21 @@
 :host {
   display: block;
   width: 100%;
-  position: sticky; // <--- Hier!
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-  nav {
-    @include display($justify: space-around, $direction: unset);
-    margin: 0 auto;
-    z-index: 1000;
-    background-color: $secondary;
-    height: 15vh;
-    font-size: 26px;
-    font-family: 'josefin sans';
-    color: #262E34;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $secondary;
+  height: 15vh;
+  color: #262E34;
+  font-family: 'Josefin Sans';
+  font-size: 26px;
+  transition: box-shadow 0.3s ease;
 
     @media (max-width: 768px) {
       display: none;

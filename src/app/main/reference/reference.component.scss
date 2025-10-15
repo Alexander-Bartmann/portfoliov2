@@ -16,7 +16,7 @@ h2{
 
     @media (max-width: 768px) {
       flex-wrap: nowrap;
-      overflow: auto;
+      overflow-x: auto;
       @include display($justify: flex-start, $direction: row);
     }
 }
@@ -32,18 +32,24 @@ h2{
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      max-width: 100%;
       object-fit: contain;
+      display: block; // entfernt das Inline-Whitespace-Verhalten
       transition: transform 0.4s ease, filter 0.4s ease;
+
       &:hover {
         transform: rotate(30deg);
         filter: brightness(1.5);
       }
 
       @media (max-width: 768px) {
-        width: auto;
+        flex: 0 0 auto;
+        width: 80vw; // damit jede Karte auf mobilen Geräten gleich breit ist
+        max-width: 80vw;
       }
     }
+
 
     .ref-content {
       position: absolute;

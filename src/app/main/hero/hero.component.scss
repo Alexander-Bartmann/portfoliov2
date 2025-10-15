@@ -69,6 +69,15 @@ main {
 
             button{
               display: none; // Standardmäßig ausgeblendet
+
+              mat-icon{
+                @media (max-width: 768px) {
+                  position: fixed;
+                  top: 24px;
+                  right: 24px;
+                }
+              }
+
             }
 
             .dropdown{
@@ -233,6 +242,10 @@ main {
       padding: 1rem;
       gap: 1rem;
 
+      @media (max-width: 636px) {
+        width: auto;
+
+      }
       // Header bleibt oben, aber kompakter
       .header-icons {
         .right-middle {
