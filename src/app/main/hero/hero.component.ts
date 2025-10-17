@@ -27,6 +27,8 @@ export class HeroComponent {
 
   navigateTo(sectionId: string): void { // <--- Neue Methode
     this.navigation.navigateTo(sectionId);
-    this.toggleMenu(); // Menü schließen nach Klick
+    if (window.innerWidth <= 768) {
+      this.toggleMenu(); // Menü schließen nach Klick
+    }
   }
 }
