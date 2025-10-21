@@ -1,172 +1,190 @@
 @import './../../../variables.scss';
 @import './../../../mixin.scss';
 
-.contact-section {
-  color: white;
-  padding: 3rem 2rem;
-  @include display();
-
-
-  h1{
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $secondary;
-    font-size: 5rem;
-    font-weight: 600;
+main{
+  @include display($align: baseline, $direction: unset);
+  @media (max-width: 768px) {
+    @include display($direction: column);
   }
 
-  .secondary {
-    color: $secondary;
-  }
 
-  .contact-intro {
-    @include display($direction: row, $justify: space-between);
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    max-width: 1000px;
+  .contact-section {
+    color: white;
+    padding: 3rem 2rem;
+    @include display();
 
-    p {
-      max-width: 60%;
-      font-size: 1.1rem;
+
+    h1{
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $secondary;
+      font-size: 5rem;
+      font-weight: 600;
     }
 
-    .contact-info a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem; // Abstand zwischen Icon und Text
-      color: white;
-      text-decoration: none;
+    .secondary {
+      color: $secondary;
+    }
 
-      mat-icon {
-        color: $secondary;
+    .contact-intro {
+      @include display($direction: row, $justify: space-between);
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      max-width: 1000px;
+
+      p {
+        max-width: 60%;
+        font-size: 1.1rem;
       }
 
-      &:hover {
-        color: $secondary;
+      .contact-info a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; // Abstand zwischen Icon und Text
+        color: white;
+        text-decoration: none;
 
         mat-icon {
           color: $secondary;
         }
-      }
-    }
-  }
 
-  .contact-form {
-    @include display($align: normal);
-    gap: 1.5rem;
-    max-width: 1000px;
-    width: 100%;
+        &:hover {
+          color: $secondary;
 
-    .form-row {
-      @include display($direction: row);
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .form-field {
-      flex: 1;
-      @include display($align: normal);
-
-      label {
-        margin-bottom: 0.5rem;
-      }
-
-      input,
-      textarea {
-        background: transparent;
-        border: 2px solid white;
-        border-radius: 8px;
-        padding: 0.75rem;
-        color: white;
-        font-size: 1rem;
-
-        &:focus {
-          outline: none;
-          border-color: $secondary;
-        }
-      }
-
-      &.invalid input,
-      &.invalid textarea {
-        border-color: $warn;
-      }
-
-      &.invalid label {
-        color: $warn;
-      }
-    }
-
-    .full-width {
-      width: 100%;
-    }
-
-    .form-agreement {
-      @include display($direction: row, $justify: start);
-      gap: 1rem;
-      font-size: 0.9rem;
-
-      p {
-        margin: 0;
-      }
-
-      .checkbox-container {
-        @include display($direction: row);
-        position: relative;
-
-        input {
-          @include display($display: none);
-        }
-
-        .custom-checkbox {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: white;
-          @include display($direction: row);
-          font-size: 1.2rem;
-          color: transparent;
-          border: 2px solid $secondary;
-          transition: all 0.2s ease;
-
-          &.checked {
-            background-color: $secondary;
-            color: white;
+          mat-icon {
+            color: $secondary;
           }
         }
       }
-
-      &.invalid .custom-checkbox {
-        border-color: $warn;
-      }
-
-      &.invalid p {
-        color: $warn;
-      }
     }
 
-    .form-actions {
-      @include display($direction: row, $justify: flex-end);
+    .contact-form {
+      @include display($align: normal);
+      gap: 1.5rem;
+      max-width: 1000px;
+      width: 100%;
 
-      .send-button {
-        background-color: $secondary;
-        color: white;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
-        border-radius: 999px; // Ellipse shape
-        cursor: pointer;
-        transition: background 0.3s ease;
+      .form-row {
+        @include display($direction: row);
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
 
-        &:hover {
-          background-color: darken($secondary, 10%);
+      .form-field {
+        flex: 1;
+        @include display($align: normal);
+
+        label {
+          margin-bottom: 0.5rem;
+        }
+
+        input,
+        textarea {
+          background: transparent;
+          border: 2px solid white;
+          border-radius: 8px;
+          padding: 0.75rem;
+          color: white;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: $secondary;
+          }
+        }
+
+        &.invalid input,
+        &.invalid textarea {
+          border-color: $warn;
+        }
+
+        &.invalid label {
+          color: $warn;
+        }
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      .form-agreement {
+        @include display($direction: row, $justify: start);
+        gap: 1rem;
+        font-size: 0.9rem;
+
+        p {
+          margin: 0;
+        }
+
+        .checkbox-container {
+          @include display($direction: row);
+          position: relative;
+
+          input {
+            @include display($display: none);
+          }
+
+          .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: white;
+            @include display($direction: row);
+            font-size: 1.2rem;
+            color: transparent;
+            border: 2px solid $secondary;
+            transition: all 0.2s ease;
+
+            &.checked {
+              background-color: $secondary;
+              color: white;
+            }
+          }
+        }
+
+        &.invalid .custom-checkbox {
+          border-color: $warn;
+        }
+
+        &.invalid p {
+          color: $warn;
+        }
+      }
+
+      .form-actions {
+        @include display($direction: row, $justify: flex-end);
+
+        .send-button {
+          background-color: $secondary;
+          color: white;
+          border: none;
+          padding: 0.75rem 2rem;
+          font-size: 1rem;
+          border-radius: 999px; // Ellipse shape
+          cursor: pointer;
+          transition: background 0.3s ease;
+
+          &:hover {
+            background-color: darken($secondary, 10%);
+          }
         }
       }
     }
   }
-}
 
-.send-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+  .send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
+  aside{
+    button {
+      background: transparent;
+      border-radius: 24px;
+      padding: 16px 8px;
+      border: 2px solid $secondary;
+      cursor: pointer;
+      transform: rotateX(180deg);
+    }
+  }
+}

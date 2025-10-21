@@ -1,4 +1,4 @@
-<main>
+<main id="hero">
   <section class="content">
 
     <!-- HEADER-ICONS GANZ OBEN -->
@@ -28,10 +28,13 @@
 
             @if (menuOpen) {
               <div class="dropdown">
-                <a (click)="navigateTo('hero')">Home</a>
-                <a (click)="navigateTo('whyMe')">Über mich</a>
-                <a (click)="navigateTo('projects')">Projekte</a>
-                <a (click)="navigateTo('contact')">Kontakt</a>
+                <a (click)="navigateTo('whyMe')">{{ 'navbar.whyMe' | translate }}</a>
+                <a (click)="navigateTo('projects')">{{ 'navbar.projects' | translate }}</a>
+                <a (click)="navigateTo('contact')">{{ 'navbar.contact' | translate }}</a>
+                <div>
+                  <button [class.active]="currentLang === 'de'" (click)="switchLanguage('de')">DE</button>
+                  <button [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</button>
+                </div>
               </div>
             }
           </div>

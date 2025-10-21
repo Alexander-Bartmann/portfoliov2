@@ -109,6 +109,46 @@ main {
                 }
               }
 
+              div{
+                @include display($direction: row);
+                gap: 12px;
+                button{
+                  background-color: transparent;
+                  padding: 8px;
+                  border: none;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  transition: all 0.18s ease;
+                  color: inherit;
+                  min-width: 44px;
+                  min-height: 44px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  // persistent active state (gesetzt via [class.active] im Template)
+                  &.active {
+                    color: $font;
+                    background-image: url('/assets/img/Ellipse24.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: translateY(-2px);
+                  }
+
+                  // keyboard / focus state
+                  &:focus {
+                    outline: none;
+                  }
+
+                  // optional hover look (does not override .active)
+                  &:hover:not(.active) {
+                    color: $font;
+                    opacity: 0.9;
+                  }
+                }
+              }
+
             }
           }
 

@@ -4,6 +4,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavigationService } from '../../navigation.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,6 +22,12 @@ export class ContactComponent {
   message = '';
   agreed = false;
   submitted = false;
+
+  constructor(private navigation: NavigationService) {}
+
+    navigateTo(sectionId: string): void { // <--- Neue Methode
+    this.navigation.navigateTo(sectionId);
+  }
 
   isFieldInvalid(field: string): boolean {
     if (!this.submitted) return false;
