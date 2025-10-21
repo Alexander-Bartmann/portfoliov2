@@ -10,13 +10,10 @@
 }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include display($justify: space-around, $direction: row);
   background-color: $secondary;
   height: 15vh;
-  color: #262E34;
-  font-family: 'Josefin Sans';
+  color: $second-font;
   font-size: 26px;
   transition: box-shadow 0.3s ease;
 
@@ -57,6 +54,7 @@ nav {
         padding: 0.5rem 1rem;
         transition: color 0.3s ease;
         position: relative;
+        color: $second-font;
 
         &:hover{
           color: $font;
@@ -107,9 +105,8 @@ nav {
         position: relative;
         min-width: 44px;
         min-height: 36px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include display($display: inline-flex, $direction: row);
+        color: $second-font;
 
         &:hover {
           color: $font;

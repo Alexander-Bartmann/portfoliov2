@@ -6,11 +6,12 @@ import { MyProjectsComponent } from "./my-projects/my-projects.component";
 import { ReferenceComponent } from "./reference/reference.component";
 import { ContactComponent } from "./contact/contact.component";
 import { NavbarComponent } from "../shared/navbar/navbar.component";
+import { FooterComponent } from "../shared/footer/footer.component";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [HeroComponent, WhyMeComponent, MySkillsComponent, MyProjectsComponent, ReferenceComponent, ContactComponent, NavbarComponent],
+  imports: [HeroComponent, WhyMeComponent, MySkillsComponent, MyProjectsComponent, ReferenceComponent, ContactComponent, NavbarComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
