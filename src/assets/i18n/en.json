@@ -85,5 +85,32 @@
     "locationDetails": "I bring a fresh perspective, genuine curiosity, and plenty of motivation.",
     "description": "Frontend development is more than just code to me, it's about bringing ideas to life and creating great user experiences. I learn quickly, love writing clean code, and enjoy finding creative solutions. With modern technologies like Angular, TypeScript, and Firebase, I'm constantly expanding my skills, aiming to build web applications that really make a difference.",
     "contactButton": "Let's talk"
+  },
+  "legalNotice": {
+    "title": "Legal Notice",
+    "name": "Alexander Bartmann",
+    "address": "Dorfplatz 3, 84175 Schalkham, Germany",
+    "email": "alexander-bartmann@outlook.de",
+    "website": "https://alexander-bartmann.de",
+    "responsiblePerson": "Alexander Bartmann",
+    "legalInfo": "Information according to § 5 TMG (German Telemedia Act)",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimer": "The contents of this website have been created with great care. However, I cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, I am responsible for my own content on these pages in accordance with § 7 (1) TMG and general laws. According to §§ 8 to 10 TMG, I am not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+    "copyrightTitle": "Copyright",
+    "copyright": "The content and works created by the site operator on this website are subject to German copyright law. Duplication, editing, distribution, and any kind of use beyond the limits of copyright require the written consent of the respective author or creator. Third-party content is marked as such.",
+    "contactButton": "Get in touch"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "I take the protection of your personal data very seriously. Your data is treated confidentially and in accordance with the applicable data protection laws and this privacy policy.",
+    "dataCollectionTitle": "Collection and Processing of Personal Data",
+    "dataCollection": "I do not collect or store personal data on this website unless you contact me voluntarily, for example by email. In that case, the information you provide (e.g. name, email address, message content) will be used solely to process your request.",
+    "serverLogsTitle": "Server Log Files",
+    "serverLogs": "The hosting provider automatically collects and stores information in server log files that your browser automatically transmits. These include: browser type and version, operating system, referrer URL, host name of the accessing computer, time of the server request, and IP address. These data cannot be assigned to specific individuals and are not merged with other data sources.",
+    "rightsTitle": "Your Rights",
+    "rights": "You have the right at any time to obtain free information about your stored personal data, its origin and recipients, and the purpose of the data processing. You also have the right to request correction, blocking, or deletion of this data. For this and other questions regarding data protection, you can contact me at the email address provided in the legal notice.",
+    "securityTitle": "Data Security",
+    "security": "I use technical and organizational security measures to protect your data against manipulation, loss, destruction, or unauthorized access. These measures are regularly reviewed and adapted to the current state of technology.",
+    "contactButton": "Privacy questions?"
   }
 }

@@ -1,6 +1,8 @@
 <footer>
   <section class="left">
-    <a href="#">Legal notice</a>
+    <!-- preventDefault wird in TS erledigt, hier zusätzlich für safety -->
+    <a href="#" (click)="openLegalNotice()">Legal notice</a>
+
     <p>© Alexander Bartmann 2025</p>
   </section>
 

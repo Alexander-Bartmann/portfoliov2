@@ -6,7 +6,7 @@ footer{
   @include display($justify: space-around, $align: center, $direction: row);
   background-color: $secondary;
   color: $second-font;
-  height: 20vh;
+  height: 15vh;
 
   section{
     a{
