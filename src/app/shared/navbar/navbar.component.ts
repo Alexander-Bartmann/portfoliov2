@@ -43,10 +43,22 @@ export class NavbarComponent {
     if (this.router.url !== '/' && this.router.url !== '') {
       this.router.navigate(['/']).then(() => {
         // kleiner Delay, damit das DOM gerendert ist bevor gescrollt wird
-        setTimeout(() => this.navigation.navigateTo(sectionId), 60);
+        setTimeout(() => {
+          this.navigation.navigateTo(sectionId);
+          // Menü schließen und body overflow wieder herstellen, falls es geöffnet war
+          if (this.menuOpen) {
+            this.menuOpen = false;
+            document.body.style.overflowY = 'auto';
+          }
+        }, 80);
       });
     } else if (window.innerWidth <= 768) {
-      this.toggleMenu(); // Menü schließen nach Klick
+      // Wenn bereits auf Startseite: Menü schließen (mobile) und scrollen
+      if (this.menuOpen) {
+        this.menuOpen = false;
+        document.body.style.overflowY = 'auto';
+      }
+      this.navigation.navigateTo(sectionId);
     } else {
       // bereits auf Startseite -> direkt scrollen
       this.navigation.navigateTo(sectionId);
