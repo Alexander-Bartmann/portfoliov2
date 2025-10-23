@@ -12,7 +12,6 @@ import { NavigationService } from '../../navigation.service'; // <--- Import
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  menuOpen = false;
   currentLang: string = 'de'; // <-- hinzugefügt
 
   constructor(
@@ -26,20 +25,10 @@ export class HeroComponent {
     this.currentLang = this.translate.currentLang || 'de';
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-    if (this.menuOpen) {
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = 'auto';
-    }
-  }
+
 
   navigateTo(sectionId: string): void { // <--- Neue Methode
     this.navigation.navigateTo(sectionId);
-    if (window.innerWidth <= 768) {
-      this.toggleMenu(); // Menü schließen nach Klick
-    }
   }
 
   // Sprachwechsel für Template

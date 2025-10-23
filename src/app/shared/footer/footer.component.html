@@ -1,6 +1,6 @@
 <footer>
   <section class="left">
-    <a href="#" (click)="toggleNotice($event)">Legal notice</a>
+    <a routerLink="/legal-notice">Legal notice</a>
 
     <p>© Alexander Bartmann 2025</p>
   </section>
@@ -46,10 +46,3 @@
     </figure>
   </div>
 </footer>
-
-@if (showNotice) {
-  <div class="legal-overlay">
-    <app-legal-notice></app-legal-notice>
-    <button class="close-btn" (click)="toggleNotice($event)">✕</button>
-  </div>
-}

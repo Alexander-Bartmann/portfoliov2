@@ -2,13 +2,10 @@
 @import './../../../variables.scss';
 
 :host {
-  position: fixed;
-  top: 10vh; // Platz für Navbar
   left: 0;
   width: 100%;
   background-color: $main;
-  z-index: 1000;
-  @include display($justify: center, $align: center, $direction: column);
+  @include display($display: block, $justify: center, $align: center, $direction: column);
   overflow: hidden !important; // <-- host scrollt NICHT
   animation: fadeIn 0.3s ease;
 
@@ -19,10 +16,9 @@
 
   // Der eigentliche scrollbare Bereich
   section.legal-notice-section {
-    width: 90%;
-    height: 75vh;
+    min-height: calc(100vh - 10vh - 15vh);
     overflow-y: auto;
-    padding: 0 5rem;
+    padding: 2rem;
     @include display($align: flex-start);
 
     h1, h2 {

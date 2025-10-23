@@ -27,3 +27,25 @@
   </div>
 
 </nav>
+
+          <div class="menu-container">
+            <button (click)="toggleMenu()">
+              @if (menuOpen) {
+                <mat-icon>close</mat-icon>
+              } @else {
+                <mat-icon>menu</mat-icon>
+              }
+            </button>
+
+            @if (menuOpen) {
+              <div class="dropdown">
+                <a (click)="navigateTo('whyMe')">{{ 'navbar.whyMe' | translate }}</a>
+                <a (click)="navigateTo('projects')">{{ 'navbar.projects' | translate }}</a>
+                <a (click)="navigateTo('contact')">{{ 'navbar.contact' | translate }}</a>
+                <div>
+                  <button [class.active]="currentLang === 'de'" (click)="switchLanguage('de')">DE</button>
+                  <button [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</button>
+                </div>
+              </div>
+            }
+          </div>
