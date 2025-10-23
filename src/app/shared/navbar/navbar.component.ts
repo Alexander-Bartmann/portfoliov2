@@ -19,7 +19,7 @@ export class NavbarComponent {
   constructor(
     private translate: TranslateService,
     private navigation: NavigationService,
-    private router: Router // <-- Router injizieren
+    private router: Router
   ) {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');
@@ -27,7 +27,7 @@ export class NavbarComponent {
     this.currentLang = this.translate.currentLang || 'de';
   }
 
-    toggleMenu() {
+  toggleMenu() {
     this.menuOpen = !this.menuOpen;
     if (this.menuOpen) {
       document.body.style.overflowY = 'hidden';
@@ -38,31 +38,31 @@ export class NavbarComponent {
 
   navigateTo(sectionId: string): void {
     this.activeButton = sectionId;
-
-    // Wenn wir nicht auf der Startseite sind, erst dorthin navigieren
     if (this.router.url !== '/' && this.router.url !== '') {
-      this.router.navigate(['/']).then(() => {
-        // kleiner Delay, damit das DOM gerendert ist bevor gescrollt wird
-        setTimeout(() => {
-          this.navigation.navigateTo(sectionId);
-          // Menü schließen und body overflow wieder herstellen, falls es geöffnet war
-          if (this.menuOpen) {
-            this.menuOpen = false;
-            document.body.style.overflowY = 'auto';
-          }
-        }, 80);
-      });
-    } else if (window.innerWidth <= 768) {
-      // Wenn bereits auf Startseite: Menü schließen (mobile) und scrollen
+      this.routerNavigate(sectionId);
+      return;
+    }
+    if (window.innerWidth <= 768) {
       if (this.menuOpen) {
         this.menuOpen = false;
         document.body.style.overflowY = 'auto';
       }
       this.navigation.navigateTo(sectionId);
-    } else {
-      // bereits auf Startseite -> direkt scrollen
-      this.navigation.navigateTo(sectionId);
+      return;
     }
+    this.navigation.navigateTo(sectionId);
+  }
+
+  private routerNavigate(sectionId: string): void {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        this.navigation.navigateTo(sectionId);
+        if (this.menuOpen) {
+          this.menuOpen = false;
+          document.body.style.overflowY = 'auto';
+        }
+      }, 80);
+    });
   }
 
   switchLanguage(lang: string): void {
