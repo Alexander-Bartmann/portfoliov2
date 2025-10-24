@@ -36,3 +36,38 @@ footer{
     }
   }
 }
+
+@media (max-width: 768px) {
+  footer {
+    @include display($direction:column);
+    height: auto;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+
+    .middle {
+      order: 1;
+    }
+
+    .right {
+      order: 2;
+    }
+
+    .left {
+      order: 3;
+      @include display($direction:row, $justify: space-around);
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    // Optional: Alles zentrieren
+    section, div {
+      text-align: center;
+      align-items: center;
+    }
+
+    // Icons weniger Abstand
+    .right figure {
+      margin: 0.5rem;
+    }
+  }
+}

@@ -32,6 +32,10 @@ main {
           right: 25%;
           top: 46%;
 
+          @media (min-width: 2800px) {
+            right: 40%;
+          }
+
           @media (max-width: 768px) {
             position: unset;
           }
@@ -136,6 +140,7 @@ main {
         width: 100%;
         pointer-events: none;
 
+
         img{
           @media (max-width: 768px) {
             border-radius: 0 0 110px 85px;
@@ -233,6 +238,9 @@ main {
           left: 50%;
           transform: translateX(-50%);
         }
+        .portrait{
+          max-width: 250px !important;
+        }
       }
 
       // Überschriften werden kleiner
@@ -283,7 +291,7 @@ main {
 
         .background,
         .portrait {
-          max-width: 220px;
+          max-width: 220px !important;
         }
       }
 

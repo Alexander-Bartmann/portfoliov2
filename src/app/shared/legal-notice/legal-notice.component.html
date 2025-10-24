@@ -1,7 +1,10 @@
 <app-navbar></app-navbar>
 <div class="legal-notice-content">
   <section id="legal-notice" class="legal-notice-section">
-    <h1>{{ 'legalNotice.title' | translate }}</h1>
+    <div class="headline">
+      <h1>{{ 'legalNotice.title' | translate }}</h1>
+      <mat-icon (click)="close()">close</mat-icon>
+    </div>
 
     <p><strong>{{ 'legalNotice.legalInfo' | translate }}</strong></p>
 
@@ -25,12 +28,6 @@
 
     <h2>{{ 'legalNotice.copyrightTitle' | translate }}</h2>
     <p>{{ 'legalNotice.copyright' | translate }}</p>
-
-    <div class="actions">
-      <button mat-stroked-button mat-dialog-close class="contact-btn">
-        {{ 'legalNotice.contactButton' | translate }}
-      </button>
-    </div>
   </section>
 </div>
 <app-footer></app-footer>
