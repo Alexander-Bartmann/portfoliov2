@@ -5,7 +5,9 @@
     "name": "Dein Name",
     "email": "Deine E-Mail",
     "message": "Deine Nachricht",
-    "privacyPolicy": "Ich habe die Datenschutzbestimmungen gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "privacyPolicyBefore": "Ich habe die ",
+    "privacyPolicyLink": "Datenschutzbestimmungen",
+    "privacyPolicyAfter": " gelesen und stimme der Verarbeitung meiner Daten zu.",
     "send": "Nachricht senden",
     "sending": "Nachricht wird gesendet..."
   },
@@ -62,7 +64,7 @@
   },
 
   "references": {
-    "title": "Brauchst du einen Teamplayer? Das sagen meine Kolleg:innen über mich",
+    "title": "Brauchst du einen Teamplayer? Das sagen meine Kolleg*innen über mich",
     "projectLabel": "Projekt:",
     "finn": {
       "name": "Finn G.",
@@ -83,7 +85,7 @@
     "title": "Warum ich?",
     "location": "Ich bin in Landshut, Deutschland ansässig.",
     "locationDetails": "Ich bringe eine frische Perspektive, echte Neugier und viel Motivation mit. ",
-    "description": "Frontend-Entwicklung ist für mich mehr als nur Code – es geht darum, Ideen zum Leben zu erwecken und großartige Nutzererlebnisse zu schaffen. Ich lerne schnell, schreibe sauberen Code und finde kreative Lösungen. Mit modernen Technologien wie Angular, TypeScript und Firebase erweitere ich ständig meine Fähigkeiten, um Webanwendungen zu entwickeln, die wirklich einen Unterschied machen.",
+    "description": "Frontend-Entwicklung ist für mich mehr als nur Coding, es geht darum, Ideen zum Leben zu erwecken und großartige Nutzererlebnisse zu schaffen. Ich lerne schnell, schreibe sauberen Code und finde kreative Lösungen. Mit modernen Technologien wie Angular, TypeScript und Firebase erweitere ich ständig meine Fähigkeiten, um Webanwendungen zu entwickeln, die wirklich einen Unterschied machen.",
     "contactButton": "Lass uns sprechen"
   },
 
@@ -111,7 +113,6 @@
     "rightsTitle": "Deine Rechte",
     "rights": "Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Außerdem hast du ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz kannst du dich jederzeit über die im Impressum angegebene E-Mail-Adresse an mich wenden.",
     "securityTitle": "Datensicherheit",
-    "security": "Ich nutze technische und organisatorische Sicherheitsmaßnahmen, um deine Daten gegen Manipulation, Verlust, Zerstörung oder unbefugten Zugriff zu schützen. Diese Maßnahmen werden regelmäßig überprüft und an den aktuellen Stand der Technik angepasst.",
-    "contactButton": "Fragen zum Datenschutz?"
+    "security": "Ich nutze technische und organisatorische Sicherheitsmaßnahmen, um deine Daten gegen Manipulation, Verlust, Zerstörung oder unbefugten Zugriff zu schützen. Diese Maßnahmen werden regelmäßig überprüft und an den aktuellen Stand der Technik angepasst."
   }
 }

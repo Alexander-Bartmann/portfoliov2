@@ -114,11 +114,21 @@ main{
 
         p {
           margin: 0;
+
+          a{
+            color: $secondary;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
 
         .checkbox-container {
           @include display($direction: row);
           position: relative;
+          cursor: pointer;
 
           input {
             @include display($display: none);

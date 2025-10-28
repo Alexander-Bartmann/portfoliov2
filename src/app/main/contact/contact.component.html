@@ -41,7 +41,9 @@
         <span class="custom-checkbox" [class.checked]="agreed">&#10003;</span>
       </label>
       <p>
-        {{ 'contact.privacyPolicy' | translate }}
+        {{ 'contact.privacyPolicyBefore' | translate }}
+        <a routerLink="/privacy-policy">{{ 'contact.privacyPolicyLink' | translate }}</a>
+        {{ 'contact.privacyPolicyAfter' | translate }}
       </p>
     </div>
 

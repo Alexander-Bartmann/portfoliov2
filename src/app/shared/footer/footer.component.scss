@@ -12,6 +12,9 @@ footer{
     a{
       text-decoration: none;
       color: $second-font;
+      &:hover{
+        color: $font;
+      }
     }
     img{
       width: 80px;
