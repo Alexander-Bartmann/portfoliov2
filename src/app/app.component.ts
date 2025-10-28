@@ -15,8 +15,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   standalone: true,
   imports: [
     RouterOutlet,
-    MainComponent,
-    HttpClientModule,
     TranslateModule
   ],
   templateUrl: './app.component.html',

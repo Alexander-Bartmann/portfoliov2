@@ -75,7 +75,7 @@ nav {
             background-color: #262e346c;
             border-radius: 50%;
             transform: rotate(15deg);
-            z-index: -1; // Hinter dem Text
+            z-index: -1;
           }
 
           &::after {
@@ -111,7 +111,6 @@ nav {
           color: $font;
         }
 
-        // persistent active state (gesetzt via [class.active] im Template)
         &.active {
           color: $font;
           background-image: url("../../../assets/img/Ellipse24.png");
@@ -134,7 +133,7 @@ nav {
             @include display($align:end);
 
             button{
-              display: none; // Standardmäßig ausgeblendet
+              display: none;
 
               mat-icon{
                 @media (max-width: 768px) {
@@ -152,10 +151,10 @@ nav {
               background-repeat: no-repeat;
               height: 380px;
               width: 360px;
-              position: fixed; // Statt absolute
+              position: fixed;
               top: 30%;
               left: 50%;
-              transform: translate(-50%, -50%); // Zentriert
+              transform: translate(-50%, -50%);
               @include display();
               z-index: 4;
               gap: 16px;
@@ -192,7 +191,6 @@ nav {
                   align-items: center;
                   justify-content: center;
 
-                  // persistent active state (gesetzt via [class.active] im Template)
                   &.active {
                     color: $font;
                     background-image: url('/assets/img/Ellipse24.png');
@@ -202,12 +200,10 @@ nav {
                     transform: translateY(-2px);
                   }
 
-                  // keyboard / focus state
                   &:focus {
                     outline: none;
                   }
 
-                  // optional hover look (does not override .active)
                   &:hover:not(.active) {
                     color: $font;
                     opacity: 0.9;

@@ -40,7 +40,7 @@ main{
       .contact-info a {
         display: flex;
         align-items: center;
-        gap: 0.5rem; // Abstand zwischen Icon und Text
+        gap: 0.5rem;
         color: white;
         text-decoration: none;
 
@@ -170,7 +170,7 @@ main{
           border: none;
           padding: 0.75rem 2rem;
           font-size: 1rem;
-          border-radius: 999px; // Ellipse shape
+          border-radius: 999px;
           cursor: pointer;
           transition: background 0.3s ease;
 

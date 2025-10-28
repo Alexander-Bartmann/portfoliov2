@@ -6,9 +6,8 @@
   width: 100%;
   background-color: $main;
   @include display($display: block, $justify: center, $align: center, $direction: column);
-  overflow: hidden !important; // <-- host scrollt NICHT
+  overflow: hidden !important;
   animation: fadeIn 0.3s ease;
-
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -27,7 +26,6 @@
     }
   }
 
-  // Der eigentliche scrollbare Bereich
   section.legal-notice-section {
     min-height: calc(100vh - 10vh - 15vh);
     overflow-y: auto;
@@ -94,7 +92,6 @@
       }
     }
 
-    // Scrollbar nur für das Impressum
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -107,7 +104,6 @@
     }
   }
 
-  // responsive Anpassungen
   @media (max-width: 768px) {
 
     section.legal-notice-section {

@@ -1,7 +1,6 @@
 <section class="projects" id="projects">
   <h1>{{ 'myProjects.title' | translate }}</h1>
 
-  <!-- Tabs -->
   <div class="tab-container">
     @for (project of projects; track project.id; let index = $index) {
       <button
@@ -13,17 +12,14 @@
     }
   </div>
 
-  <!-- Aktives Projekt -->
   <div class="project-card">
     <div class="card-content">
-      <!-- Linke Seite: Description-Blocks -->
       <div class="left-column">
         @for (block of projects[activeProject].contentBlocks; let index = $index; track block.titleKey) {
           <div class="content-section">
             <div class="title-row">
               <img [src]="block.ellipseImg" alt="Icon" class="ellipse-icon">
               <h3>{{ block.titleKey | translate }}</h3>
-              <!-- Duration nur beim ersten Block -->
               @if (index === 0) {
                 <span class="duration">{{ projects[activeProject].durationKey | translate }}</span>
               }
@@ -33,7 +29,6 @@
         }
       </div>
 
-      <!-- Rechte Seite -->
       <div class="right-column">
         <div class="tech-stack">
           <p>{{ 'myProjects.technologies' | translate }}</p>

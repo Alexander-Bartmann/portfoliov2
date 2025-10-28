@@ -19,13 +19,13 @@ export class ReferenceComponent {
     },
     {
       nameKey: 'references.lea.name',
-      projectKey: '',  // Kein Projekt
+      projectKey: '',
       textKey: 'references.lea.text',
       bgImg: 'assets/img/Skill-Ellipse.png'
     },
     {
       nameKey: 'references.tim.name',
-      projectKey: '',  // Kein Projekt
+      projectKey: '',
       textKey: 'references.tim.text',
       bgImg: 'assets/img/Skill-Ellipse.png'
     }

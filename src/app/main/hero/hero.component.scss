@@ -8,15 +8,14 @@ main {
 
   > section.content {
     flex: 1;
-    @include display(); // Column für die drei Ebenen
+    @include display();
     gap: 20px;
     @include content-padding();
     width: 80%;
 
-    // ===== HEADER-ICONS OBEN =====
     .header-icons {
       width: 100%;
-      order: 1; // Ganz oben
+      order: 1;
 
       .right-middle {
         width: 100%;
@@ -72,7 +71,7 @@ main {
             margin: 0;
 
             @media (max-width: 768px) {
-              display: none; // Auf mobilen Geräten ausblenden
+              display: none;
             }
 
             svg {
@@ -91,16 +90,14 @@ main {
       }
     }
 
-    // ===== WRAPPER FÜR LEFT & RIGHT (Untereinander) =====
     .content-wrapper {
-      @include display($direction: row, $align: stretch); // Left und Right nebeneinander
+      @include display($direction: row, $align: stretch);
       gap: 20px;
       flex: 1;
       width: 100%;
-      order: 2; // Unter dem Header
+      order: 2;
     }
 
-    // ===== LINKE SEITE (Foto) =====
     .left {
       flex: 1;
       @include display($direction: column, $align: center, $justify: center);
@@ -151,7 +148,6 @@ main {
       }
     }
 
-    // ===== RECHTE SEITE (Überschriften) =====
     .right {
       flex: 1;
       @include display($direction: column, $align: center, $justify: center);
@@ -179,7 +175,6 @@ main {
     }
   }
 
-  // ===== MOBILE OPTIMIERUNG =====
   @media (max-width: 768px) {
     min-height: 100vh;
 
@@ -192,7 +187,6 @@ main {
         width: auto;
 
       }
-      // Header bleibt oben, aber kompakter
       .header-icons {
         .right-middle {
           padding: 0.5rem 0;
@@ -219,13 +213,11 @@ main {
         }
       }
 
-      // Content-Wrapper wird zu Column
       .content-wrapper {
         flex-direction: column !important;
         gap: 2rem;
       }
 
-      // Foto wird kompakter
       .left {
         max-width: 100%;
         height: 40vh;
@@ -243,7 +235,6 @@ main {
         }
       }
 
-      // Überschriften werden kleiner
       .right {
         h1 {
           font-size: 2.5rem !important;
@@ -258,7 +249,6 @@ main {
     }
   }
 
-  // Sehr kleine Screens
   @media (max-width: 480px) {
     > section.content {
       .header-icons {

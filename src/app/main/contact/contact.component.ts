@@ -39,38 +39,60 @@ export class ContactComponent {
     return this.submitted && !this.agreed;
   }
 
-  onSubmit() {
-    this.submitted = true;
+    onSubmit() {
+      this.submitted = true;
+      if (!this.isFormValid()) return;
 
-    if (!this.name.trim() || !this.email.trim() || !this.message.trim() || !this.agreed) {
-      return;
+      this.isSending = true;
+      const payload = this.buildPayload();
+
+      this.sendMail(payload);
     }
 
-    this.isSending = true;
+    private isFormValid(): boolean {
+      return (
+        this.name.trim().length > 0 &&
+        this.email.trim().length > 0 &&
+        this.message.trim().length > 0 &&
+        this.agreed
+      );
+    }
 
-    const payload = {
-      name: this.name,
-      email: this.email,
-      message: this.message
-    };
+    private buildPayload() {
+      return {
+        name: this.name,
+        email: this.email,
+        message: this.message
+      };
+    }
 
-    this.http.post('https://alexander-bartmann.de/sendMail.php', payload, {
-      responseType: 'text'
-    }).subscribe({
-      next: () => {
-        alert('Message sent successfully!');
-        this.name = '';
-        this.email = '';
-        this.message = '';
-        this.agreed = false;
-        this.submitted = false;
-        this.isSending = false;
-      },
-      error: (err) => {
-        console.error('Error sending message:', err);
-        alert('Oops! Something went wrong. Please try again later.');
-        this.isSending = false;
-      }
-    });
-  }
+    private sendMail(payload: any) {
+      this.http.post('https://alexander-bartmann.de/sendMail.php', payload, {
+        responseType: 'text'
+      }).subscribe({
+        next: () => this.onMailSuccess(),
+        error: (err) => this.onMailError(err)
+      });
+    }
+
+    private onMailSuccess() {
+      alert('Message sent successfully!');
+      this.resetForm();
+      this.isSending = false;
+    }
+
+    private onMailError(err: any) {
+      console.error('Error sending message:', err);
+      alert('Oops! Something went wrong. Please try again later.');
+      this.isSending = false;
+    }
+
+    private resetForm() {
+      this.name = '';
+      this.email = '';
+      this.message = '';
+      this.agreed = false;
+      this.submitted = false;
+    }
+
 }
