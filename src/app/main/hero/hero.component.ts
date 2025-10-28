@@ -15,13 +15,16 @@ export class HeroComponent {
   currentLang: string = 'de';
 
   constructor(
+    private translate: TranslateService,
     private navigation: NavigationService,
-    private translate: TranslateService
   ) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('de');
-    this.translate.use('de');
+    translate.addLangs(['de', 'en']);
+    translate.setDefaultLang('de');
+    translate.use('de');
     this.currentLang = this.translate.currentLang || 'de';
+    const savedLang = localStorage.getItem('selectedLang') || 'de';
+    this.translate.use(savedLang);
+    this.currentLang = savedLang;
   }
 
   navigateTo(sectionId: string): void {
@@ -31,5 +34,6 @@ export class HeroComponent {
   switchLanguage(lang: string): void {
     this.translate.use(lang);
     this.currentLang = lang;
+    localStorage.setItem('selectedLang', lang);
   }
 }

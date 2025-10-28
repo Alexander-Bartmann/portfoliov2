@@ -25,6 +25,9 @@ export class NavbarComponent {
     translate.setDefaultLang('de');
     translate.use('de');
     this.currentLang = this.translate.currentLang || 'de';
+    const savedLang = localStorage.getItem('selectedLang') || 'de';
+    this.translate.use(savedLang);
+    this.currentLang = savedLang;
   }
 
   toggleMenu() {
@@ -68,5 +71,6 @@ export class NavbarComponent {
   switchLanguage(lang: string): void {
     this.translate.use(lang);
     this.currentLang = lang;
+    localStorage.setItem('selectedLang', lang);
   }
 }

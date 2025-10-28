@@ -27,6 +27,9 @@
       <div class="form-field" [class.invalid]="isFieldInvalid('email')">
         <label class="secondary">{{ 'contact.email' | translate }}</label>
         <input type="email" [(ngModel)]="email" name="email">
+        <span class="error-message" *ngIf="isFieldInvalid('email')">
+          {{ 'contact.invalidEmail' | translate }}
+        </span>
       </div>
     </div>
 
@@ -52,6 +55,9 @@
         <ng-container *ngIf="!isSending">{{ 'contact.send' | translate }}</ng-container>
         <ng-container *ngIf="isSending">{{ 'contact.sending' | translate }}</ng-container>
       </button>
+      <span class="success-message" *ngIf="messageSent">
+        ✓ {{ 'contact.messageSent' | translate }}
+      </span>
     </div>
   </form>
 
@@ -61,4 +67,3 @@
     <button (click)="navigateTo('hero')"><img src="assets/img/ArrowUp.png" alt=""></button>
   </aside>
 </main>
-

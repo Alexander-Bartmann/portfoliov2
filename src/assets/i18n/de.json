@@ -9,7 +9,9 @@
     "privacyPolicyLink": "Datenschutzbestimmungen",
     "privacyPolicyAfter": " gelesen und stimme der Verarbeitung meiner Daten zu.",
     "send": "Nachricht senden",
-    "sending": "Nachricht wird gesendet..."
+    "sending": "Nachricht wird gesendet...",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "messageSent": "Nachricht erfolgreich gesendet!"
   },
 
   "navbar": {

@@ -9,7 +9,9 @@
     "privacyPolicyLink": "privacy policy",
     "privacyPolicyAfter": " and agree to the processing of my data as outlined.",
     "send": "Send Message",
-    "sending": "Sending Message..."
+    "sending": "Sending Message...",
+    "invalidEmail": "Invalid Email Address",
+    "messageSent": "Message sent successfully!"
   },
 
   "navbar": {

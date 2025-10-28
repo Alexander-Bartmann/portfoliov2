@@ -23,6 +23,7 @@ export class ContactComponent {
   message = '';
   agreed = false;
   submitted = false;
+  messageSent = false;
 
   constructor(private navigation: NavigationService) {}
 
@@ -30,10 +31,23 @@ export class ContactComponent {
     this.navigation.navigateTo(sectionId);
   }
 
-  isFieldInvalid(field: string): boolean {
-    if (!this.submitted) return false;
-    return !(this as any)[field]?.toString().trim();
-  }
+    isEmailValid(): boolean {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const validDomains = ['gmail.com', 'gmx.de', 'gmx.net', 'outlook.de', 'outlook.com', 'web.de', 't-online.de', 'yahoo.com', 'icloud.com'];
+
+      if (!emailRegex.test(this.email)) return false;
+
+      const domain = this.email.split('@')[1]?.toLowerCase();
+      return validDomains.includes(domain);
+    }
+
+    isFieldInvalid(field: string): boolean {
+      if (!this.submitted) return false;
+      if (field === 'email') {
+        return !this.isEmailValid();
+      }
+      return !(this as any)[field]?.toString().trim();
+    }
 
   isCheckboxInvalid(): boolean {
     return this.submitted && !this.agreed;
@@ -76,9 +90,13 @@ export class ContactComponent {
     }
 
     private onMailSuccess() {
-      alert('Message sent successfully!');
+      this.messageSent = true;
       this.resetForm();
       this.isSending = false;
+
+      setTimeout(() => {
+        this.messageSent = false;
+      }, 3000);
     }
 
     private onMailError(err: any) {
@@ -94,5 +112,7 @@ export class ContactComponent {
       this.agreed = false;
       this.submitted = false;
     }
+
+
 
 }

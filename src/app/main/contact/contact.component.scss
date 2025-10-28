@@ -178,6 +178,10 @@ main{
             background-color: darken($secondary, 10%);
           }
         }
+          .success-message {
+            color: $secondary;
+            font-weight: 600;
+          }
       }
     }
   }
@@ -197,4 +201,10 @@ main{
       transform: rotateX(180deg);
     }
   }
+}
+
+.error-message {
+  color: $warn;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
 }
