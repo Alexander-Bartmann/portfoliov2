@@ -13,7 +13,7 @@
 nav {
   /* Hintergrund / full-width bleibt auf nav */
   background-color: $secondary;
-  height: 10vh;
+  min-height: 10vh;
   width: 100%;
   color: $second-font;
   transition: box-shadow 0.3s ease;
@@ -35,7 +35,6 @@ nav {
     /* linke Sektion (Logo / Name) */
     > section:first-child {
       @include display();
-      gap: 1rem;
 
       img {
         width: 40px;
