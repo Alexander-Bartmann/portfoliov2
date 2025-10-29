@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { HeroComponent } from "./hero/hero.component";
-import { WhyMeComponent } from "./why-me/why-me.component";
-import { MySkillsComponent } from "./my-skills/my-skills.component";
-import { MyProjectsComponent } from "./my-projects/my-projects.component";
-import { ReferenceComponent } from "./reference/reference.component";
-import { ContactComponent } from "./contact/contact.component";
-import { NavbarComponent } from "../shared/navbar/navbar.component";
-import { FooterComponent } from "../shared/footer/footer.component";
+import { HeroComponent } from './hero/hero.component';
+import { WhyMeComponent } from './why-me/why-me.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { ReferenceComponent } from './reference/reference.component';
+import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-main',
@@ -19,10 +19,10 @@ import { FooterComponent } from "../shared/footer/footer.component";
     ReferenceComponent,
     ContactComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrl: './main.component.scss',
 })
 export class MainComponent {
   showLegalNotice = false;

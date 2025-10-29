@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './my-skills.component.html',
-  styleUrl: './my-skills.component.scss'
+  styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
   skills = [
@@ -18,6 +18,6 @@ export class MySkillsComponent {
     { name: 'CSS', img: 'assets/img/css.png' },
     { name: 'Firebase', img: 'assets/img/firebase.png' },
     { name: 'Git', img: 'assets/img/git.png' },
-    { name: 'Scrum', img: 'assets/img/scrum.png' }
+    { name: 'Scrum', img: 'assets/img/scrum.png' },
   ];
 }

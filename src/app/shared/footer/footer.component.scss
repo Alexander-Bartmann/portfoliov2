@@ -1,39 +1,39 @@
-@import './../../../mixin.scss';
-@import './../../../variables.scss';
+@import "./../../../mixin.scss";
+@import "./../../../variables.scss";
 
-footer{
+footer {
   @include display($justify: space-around, $align: center, $direction: row);
   background-color: $secondary;
   color: $second-font;
   height: 15vh;
 
-  section{
-    a{
+  section {
+    a {
       text-decoration: none;
       color: $second-font;
-      &:hover{
+      &:hover {
         color: $font;
       }
     }
-    img{
+    img {
       width: 80px;
     }
   }
 
-  .middle{
+  .middle {
     @include display($direction: column, $align: center, $justify: center);
-    p{
+    p {
       font-size: 0.8rem;
       margin: 0;
     }
-    .color{
+    .color {
       color: $font;
     }
   }
 
-  div{
-    @include display($direction:row);
-    figure{
+  div {
+    @include display($direction: row);
+    figure {
       margin: 1rem;
     }
   }
@@ -41,7 +41,7 @@ footer{
 
 @media (max-width: 768px) {
   footer {
-    @include display($direction:column);
+    @include display($direction: column);
     height: auto;
     padding: 2rem 1rem;
     gap: 1.5rem;
@@ -56,12 +56,13 @@ footer{
 
     .left {
       order: 3;
-      @include display($direction:row, $justify: space-around);
+      @include display($direction: row, $justify: space-around);
       width: 100%;
       font-size: 0.9rem;
     }
 
-    section, div {
+    section,
+    div {
       text-align: center;
       align-items: center;
     }

@@ -1,7 +1,7 @@
-@import './../../../variables.scss';
-@import './../../../mixin.scss';
+@import "./../../../variables.scss";
+@import "./../../../mixin.scss";
 
-h2{
+h2 {
   color: $secondary;
   @include display($direction: row);
   padding: 5rem;
@@ -14,11 +14,11 @@ h2{
   flex-wrap: wrap;
   padding: 2rem 0;
 
-    @media (max-width: 768px) {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      @include display($justify: flex-start, $direction: row);
-    }
+  @media (max-width: 768px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    @include display($justify: flex-start, $direction: row);
+  }
 }
 
 .reference-card {
@@ -50,7 +50,6 @@ h2{
       }
     }
 
-
     .ref-content {
       position: absolute;
       top: 50%;
@@ -65,7 +64,7 @@ h2{
         font-size: 1.2rem;
       }
 
-      .project-text{
+      .project-text {
         color: $secondary;
       }
 

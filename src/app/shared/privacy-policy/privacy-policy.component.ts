@@ -9,9 +9,9 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [TranslateModule, NavbarComponent, FooterComponent, MatIcon],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrl: './privacy-policy.component.scss',
 })
-export class PrivacyPolicyComponent implements OnInit{
+export class PrivacyPolicyComponent implements OnInit {
   close(): void {
     window.history.back();
   }

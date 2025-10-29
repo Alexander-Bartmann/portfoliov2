@@ -10,12 +10,17 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule, TranslateModule, RouterLink],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconModule,
+    TranslateModule,
+    RouterLink,
+  ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-
   http = inject(HttpClient);
   isSending = false;
   name = '';
@@ -27,92 +32,102 @@ export class ContactComponent {
 
   constructor(private navigation: NavigationService) {}
 
-    navigateTo(sectionId: string): void { // <--- Neue Methode
+  navigateTo(sectionId: string): void {
+    // <--- Neue Methode
     this.navigation.navigateTo(sectionId);
   }
 
-    isEmailValid(): boolean {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const validDomains = ['gmail.com', 'gmx.de', 'gmx.net', 'outlook.de', 'outlook.com', 'web.de', 't-online.de', 'yahoo.com', 'icloud.com'];
+  isEmailValid(): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const validDomains = [
+      'gmail.com',
+      'gmx.de',
+      'gmx.net',
+      'outlook.de',
+      'outlook.com',
+      'web.de',
+      't-online.de',
+      'yahoo.com',
+      'icloud.com',
+    ];
 
-      if (!emailRegex.test(this.email)) return false;
+    if (!emailRegex.test(this.email)) return false;
 
-      const domain = this.email.split('@')[1]?.toLowerCase();
-      return validDomains.includes(domain);
+    const domain = this.email.split('@')[1]?.toLowerCase();
+    return validDomains.includes(domain);
+  }
+
+  isFieldInvalid(field: string): boolean {
+    if (!this.submitted) return false;
+    if (field === 'email') {
+      return !this.isEmailValid();
     }
-
-    isFieldInvalid(field: string): boolean {
-      if (!this.submitted) return false;
-      if (field === 'email') {
-        return !this.isEmailValid();
-      }
-      return !(this as any)[field]?.toString().trim();
-    }
+    return !(this as any)[field]?.toString().trim();
+  }
 
   isCheckboxInvalid(): boolean {
     return this.submitted && !this.agreed;
   }
 
-    onSubmit() {
-      this.submitted = true;
-      if (!this.isFormValid()) return;
+  onSubmit() {
+    this.submitted = true;
+    if (!this.isFormValid()) return;
 
-      this.isSending = true;
-      const payload = this.buildPayload();
+    this.isSending = true;
+    const payload = this.buildPayload();
 
-      this.sendMail(payload);
-    }
+    this.sendMail(payload);
+  }
 
-    private isFormValid(): boolean {
-      return (
-        this.name.trim().length > 0 &&
-        this.email.trim().length > 0 &&
-        this.message.trim().length > 0 &&
-        this.agreed
-      );
-    }
+  private isFormValid(): boolean {
+    return (
+      this.name.trim().length > 0 &&
+      this.email.trim().length > 0 &&
+      this.message.trim().length > 0 &&
+      this.agreed
+    );
+  }
 
-    private buildPayload() {
-      return {
-        name: this.name,
-        email: this.email,
-        message: this.message
-      };
-    }
+  private buildPayload() {
+    return {
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    };
+  }
 
-    private sendMail(payload: any) {
-      this.http.post('https://alexander-bartmann.de/sendMail.php', payload, {
-        responseType: 'text'
-      }).subscribe({
+  private sendMail(payload: any) {
+    this.http
+      .post('https://alexander-bartmann.de/sendMail.php', payload, {
+        responseType: 'text',
+      })
+      .subscribe({
         next: () => this.onMailSuccess(),
-        error: (err) => this.onMailError(err)
+        error: (err) => this.onMailError(err),
       });
-    }
+  }
 
-    private onMailSuccess() {
-      this.messageSent = true;
-      this.resetForm();
-      this.isSending = false;
+  private onMailSuccess() {
+    this.messageSent = true;
+    this.resetForm();
+    this.isSending = false;
 
-      setTimeout(() => {
-        this.messageSent = false;
-      }, 3000);
-    }
+    setTimeout(() => {
+      this.messageSent = false;
+    }, 3000);
+  }
 
-    private onMailError(err: any) {
-      console.error('Error sending message:', err);
-      alert('Oops! Something went wrong. Please try again later.');
-      this.isSending = false;
-    }
+  private onMailError(err: any) {
+    console.error('Error sending message:', err);
+    alert('Oops! Something went wrong. Please try again later.');
+    this.isSending = false;
+  }
 
-    private resetForm() {
-      this.name = '';
-      this.email = '';
-      this.message = '';
-      this.agreed = false;
-      this.submitted = false;
-    }
-
-
-
+  private resetForm() {
+    this.name = '';
+    this.email = '';
+    this.message = '';
+    this.agreed = false;
+    this.submitted = false;
+  }
 }

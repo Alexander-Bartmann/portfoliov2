@@ -1,5 +1,5 @@
-@import './../../../mixin.scss';
-@import './../../../variables.scss';
+@import "./../../../mixin.scss";
+@import "./../../../variables.scss";
 
 :host {
   display: block;
@@ -17,217 +17,214 @@ nav {
   font-size: 26px;
   transition: box-shadow 0.3s ease;
 
-    @media (max-width: 768px) {
-      display: none;
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  > section:first-child {
+    @include display();
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
-    > section:first-child {
-      @include display();
+    p {
+      margin: 0;
+      font-size: 0.9rem;
 
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      p {
-        margin: 0;
-        font-size: 0.9rem;
-
-        &:first-of-type {
-          font-weight: bold;
-        }
+      &:first-of-type {
+        font-weight: bold;
       }
     }
+  }
 
-    > section:nth-child(2) {
-      display: flex;
-      gap: 1.5rem;
+  > section:nth-child(2) {
+    display: flex;
+    gap: 1.5rem;
 
-      button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 1.3rem;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s ease;
-        position: relative;
-        color: $second-font;
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+      color: $second-font;
 
-        &:hover{
-          color: $font;
-        }
-        &.active {
-          color: $font;
-          background-image: url("../../../assets/img/Ellipse24.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #262e346c;
-            border-radius: 50%;
-            transform: rotate(15deg);
-            z-index: -1;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 2px;
-          }
-        }
+      &:hover {
+        color: $font;
       }
-    }
+      &.active {
+        color: $font;
+        background-image: url("../../../assets/img/Ellipse24.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
 
-    > div {
-      display: flex;
-      gap: 0.5rem;
-
-      button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 0.8rem;
-        transition: all 0.3s ease;
-        position: relative;
-        min-width: 44px;
-        min-height: 36px;
-        @include display($display: inline-flex, $direction: row);
-        color: $second-font;
-
-        &:hover {
-          color: $font;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #262e346c;
+          border-radius: 50%;
+          transform: rotate(15deg);
+          z-index: -1;
         }
 
-        &.active {
-          color: $font;
-          background-image: url("../../../assets/img/Ellipse24.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          border: none;
-          transform: translateY(-1px);
-        }
-
-        &:focus {
-          outline: none;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 20px;
+          height: 2px;
         }
       }
     }
   }
 
+  > div {
+    display: flex;
+    gap: 0.5rem;
 
-          .menu-container {
-            @include display($align:end);
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      position: relative;
+      min-width: 44px;
+      min-height: 36px;
+      @include display($display: inline-flex, $direction: row);
+      color: $second-font;
 
-            button{
-              display: none;
+      &:hover {
+        color: $font;
+      }
 
-              mat-icon{
-                @media (max-width: 768px) {
-                  position: fixed;
-                  top: 24px;
-                  right: 24px;
-                }
-              }
+      &.active {
+        color: $font;
+        background-image: url("../../../assets/img/Ellipse24.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        transform: translateY(-1px);
+      }
 
-            }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
 
-            .dropdown{
-              background-image: url("/assets/img/Ellipse 35.png");
-              background-size: contain;
-              background-repeat: no-repeat;
-              height: 380px;
-              width: 360px;
-              position: fixed;
-              top: 30%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              @include display();
-              z-index: 4;
-              gap: 16px;
-              font-size: 1.3rem;
-              color: $main;
+.menu-container {
+  @include display($align: end);
 
-              @media (max-width: 460px) {
-                width: 300px;
-                height: 300px;
-                top: 35%;
-              }
+  button {
+    display: none;
 
-              a{
-                cursor: pointer;
-                &:active{
-                  color: $font;
-                }
-              }
+    mat-icon {
+      @media (max-width: 768px) {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+      }
+    }
+  }
 
-              div{
-                @include display($direction: row);
-                gap: 12px;
-                button{
-                  background-color: transparent;
-                  padding: 8px;
-                  border: none;
-                  border-radius: 50%;
-                  cursor: pointer;
-                  transition: all 0.18s ease;
-                  color: inherit;
-                  min-width: 44px;
-                  min-height: 44px;
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
+  .dropdown {
+    background-image: url("/assets/img/Ellipse 35.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 380px;
+    width: 360px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include display();
+    z-index: 4;
+    gap: 16px;
+    font-size: 1.3rem;
+    color: $main;
 
-                  &.active {
-                    color: $font;
-                    background-image: url('/assets/img/Ellipse24.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    transform: translateY(-2px);
-                  }
+    @media (max-width: 460px) {
+      width: 300px;
+      height: 300px;
+      top: 35%;
+    }
 
-                  &:focus {
-                    outline: none;
-                  }
+    a {
+      cursor: pointer;
+      &:active {
+        color: $font;
+      }
+    }
 
-                  &:hover:not(.active) {
-                    color: $font;
-                    opacity: 0.9;
-                  }
-                }
-              }
+    div {
+      @include display($direction: row);
+      gap: 12px;
+      button {
+        background-color: transparent;
+        padding: 8px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        color: inherit;
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
-            }
-          }
+        &.active {
+          color: $font;
+          background-image: url("/assets/img/Ellipse24.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          transform: translateY(-2px);
+        }
 
-          @media (max-width: 768px) {
-            .menu-container {
-              button{
-                display: block;
-                background-color: $main;
-                border: none;
-                cursor: pointer;
+        &:focus {
+          outline: none;
+        }
 
-                mat-icon{
-                  color: $font;
-                  font-size: 56px;
-                  width: 56px;
-                  height: 56px;
-                }
-              }
-            }
-          }
+        &:hover:not(.active) {
+          color: $font;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    button {
+      display: block;
+      background-color: $main;
+      border: none;
+      cursor: pointer;
+
+      mat-icon {
+        color: $font;
+        font-size: 56px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+}

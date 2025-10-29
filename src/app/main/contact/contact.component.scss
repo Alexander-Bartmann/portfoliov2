@@ -1,20 +1,18 @@
-@import './../../../variables.scss';
-@import './../../../mixin.scss';
+@import "./../../../variables.scss";
+@import "./../../../mixin.scss";
 
-main{
+main {
   @include display($align: baseline, $direction: unset);
   @media (max-width: 768px) {
     @include display($direction: column);
   }
-
 
   .contact-section {
     color: white;
     padding: 3rem 2rem;
     @include display();
 
-
-    h1{
+    h1 {
       text-align: center;
       margin-bottom: 2rem;
       color: $secondary;
@@ -115,7 +113,7 @@ main{
         p {
           margin: 0;
 
-          a{
+          a {
             color: $secondary;
             text-decoration: none;
 
@@ -178,10 +176,10 @@ main{
             background-color: darken($secondary, 10%);
           }
         }
-          .success-message {
-            color: $secondary;
-            font-weight: 600;
-          }
+        .success-message {
+          color: $secondary;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -191,7 +189,7 @@ main{
     cursor: not-allowed;
   }
 
-  aside{
+  aside {
     button {
       background: transparent;
       border-radius: 24px;

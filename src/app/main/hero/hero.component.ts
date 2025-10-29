@@ -9,14 +9,14 @@ import { NavigationService } from '../../navigation.service';
   standalone: true,
   imports: [TranslateModule, MatIconModule],
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss']
+  styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent {
   currentLang: string = 'de';
 
   constructor(
     private translate: TranslateService,
-    private navigation: NavigationService,
+    private navigation: NavigationService
   ) {
     translate.addLangs(['de', 'en']);
     translate.setDefaultLang('de');

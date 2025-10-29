@@ -1,19 +1,21 @@
 <section id="whyMe">
-  <h1>{{ 'whyMe.title' | translate }}</h1>
+  <h1>{{ "whyMe.title" | translate }}</h1>
   <main>
     <div class="located">
-      <img src="assets/img/location.png" alt="">
+      <img src="assets/img/location.png" alt="" />
       <span>
-        <p>{{ 'whyMe.location' | translate }}</p>
-        {{ 'whyMe.locationDetails' | translate }}
+        <p>{{ "whyMe.location" | translate }}</p>
+        {{ "whyMe.locationDetails" | translate }}
       </span>
     </div>
     <div>
       <p>
-        {{ 'whyMe.description' | translate }}
+        {{ "whyMe.description" | translate }}
       </p>
       <div>
-        <button (click)="navigateTo('contact')">{{ 'whyMe.contactButton' | translate }}</button>
+        <button (click)="navigateTo('contact')">
+          {{ "whyMe.contactButton" | translate }}
+        </button>
       </div>
     </div>
   </main>

@@ -1,5 +1,5 @@
-@import './../../../variables.scss';
-@import './../../../mixin.scss';
+@import "./../../../variables.scss";
+@import "./../../../mixin.scss";
 
 .projects {
   color: white;
@@ -16,10 +16,10 @@
     gap: 1rem;
     padding: 64px 0 0 64px;
 
-        @media (max-width: 768px) {
-          gap: 0;
-          padding: 0;
-        }
+    @media (max-width: 768px) {
+      gap: 0;
+      padding: 0;
+    }
 
     .tab-button {
       background-color: $main;
@@ -32,11 +32,11 @@
       color: $secondary;
       font-size: 2rem;
 
-        @media (max-width: 768px) {
-          gap: 0;
-          padding: 1rem;
-          font-size: 1.5rem;
-        }
+      @media (max-width: 768px) {
+        gap: 0;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
 
       &.active {
         background: $lightgrey;
@@ -73,7 +73,7 @@
           padding: 1rem;
 
           .title-row {
-            @include display($justify:start, $direction: row);
+            @include display($justify: start, $direction: row);
             gap: 0.5rem;
 
             h3 {

@@ -1,45 +1,53 @@
 <section class="projects" id="projects">
-  <h1>{{ 'myProjects.title' | translate }}</h1>
+  <h1>{{ "myProjects.title" | translate }}</h1>
 
   <div class="tab-container">
     @for (project of projects; track project.id; let index = $index) {
-      <button
-        class="tab-button"
-        [class.active]="activeProject === index"
-        (click)="activeProject = index">
-        {{ project.nameKey | translate }}
-      </button>
+    <button
+      class="tab-button"
+      [class.active]="activeProject === index"
+      (click)="activeProject = index"
+    >
+      {{ project.nameKey | translate }}
+    </button>
     }
   </div>
 
   <div class="project-card">
     <div class="card-content">
       <div class="left-column">
-        @for (block of projects[activeProject].contentBlocks; let index = $index; track block.titleKey) {
-          <div class="content-section">
-            <div class="title-row">
-              <img [src]="block.ellipseImg" alt="Icon" class="ellipse-icon">
-              <h3>{{ block.titleKey | translate }}</h3>
-              @if (index === 0) {
-                <span class="duration">{{ projects[activeProject].durationKey | translate }}</span>
-              }
-            </div>
-            <p>{{ block.descriptionKey | translate }}</p>
+        @for (block of projects[activeProject].contentBlocks; let index =
+        $index; track block.titleKey) {
+        <div class="content-section">
+          <div class="title-row">
+            <img [src]="block.ellipseImg" alt="Icon" class="ellipse-icon" />
+            <h3>{{ block.titleKey | translate }}</h3>
+            @if (index === 0) {
+            <span class="duration">{{
+              projects[activeProject].durationKey | translate
+            }}</span>
+            }
           </div>
+          <p>{{ block.descriptionKey | translate }}</p>
+        </div>
         }
       </div>
 
       <div class="right-column">
         <div class="tech-stack">
-          <p>{{ 'myProjects.technologies' | translate }}</p>
+          <p>{{ "myProjects.technologies" | translate }}</p>
           <div class="tech-icons">
             @for (tech of projects[activeProject].techStack; track tech.name) {
-              <img [src]="tech.img" [alt]="tech.name">
+            <img [src]="tech.img" [alt]="tech.name" />
             }
           </div>
         </div>
 
-        <img class="project-img" [src]="projects[activeProject].projectImg" alt="Project Preview" />
+        <img
+          class="project-img"
+          [src]="projects[activeProject].projectImg"
+          alt="Project Preview"
+        />
 
         <div class="buttons">
           <a [href]="projects[activeProject].liveUrl" target="_blank">

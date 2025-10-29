@@ -1,20 +1,21 @@
 <section>
-  <h2>{{ 'references.title' | translate }}</h2>
+  <h2>{{ "references.title" | translate }}</h2>
 
   <div class="references-wrapper">
     @for (ref of references; track ref.nameKey) {
-      <div class="reference-card">
-        <div class="bg-image">
-          <img [src]="ref.bgImg" alt="Background ellipse">
-          <div class="ref-content">
-            <h3>{{ ref.nameKey | translate }}</h3>
-            <p *ngIf="ref.projectKey" class="project-text">
-              <strong>{{ 'references.projectLabel' | translate }}</strong> {{ ref.projectKey | translate }}
-            </p>
-            <p class="quote">“{{ ref.textKey | translate }}”</p>
-          </div>
+    <div class="reference-card">
+      <div class="bg-image">
+        <img [src]="ref.bgImg" alt="Background ellipse" />
+        <div class="ref-content">
+          <h3>{{ ref.nameKey | translate }}</h3>
+          <p *ngIf="ref.projectKey" class="project-text">
+            <strong>{{ "references.projectLabel" | translate }}</strong>
+            {{ ref.projectKey | translate }}
+          </p>
+          <p class="quote">“{{ ref.textKey | translate }}”</p>
         </div>
       </div>
+    </div>
     }
   </div>
 </section>

@@ -2,32 +2,40 @@
 <div class="container legal-notice-content">
   <section id="legal-notice" class="legal-notice-section">
     <div class="headline">
-      <h1>{{ 'legalNotice.title' | translate }}</h1>
+      <h1>{{ "legalNotice.title" | translate }}</h1>
       <mat-icon (click)="close()">close</mat-icon>
     </div>
 
-    <p><strong>{{ 'legalNotice.legalInfo' | translate }}</strong></p>
+    <p>
+      <strong>{{ "legalNotice.legalInfo" | translate }}</strong>
+    </p>
 
     <div class="legal-notice-details">
-      <p><strong>{{ 'legalNotice.name' | translate }}</strong></p>
-      <p>{{ 'legalNotice.address' | translate }}</p>
+      <p>
+        <strong>{{ "legalNotice.name" | translate }}</strong>
+      </p>
+      <p>{{ "legalNotice.address" | translate }}</p>
       <p>
         <a href="mailto:{{ 'legalNotice.email' | translate }}">
-          {{ 'legalNotice.email' | translate }}
+          {{ "legalNotice.email" | translate }}
         </a>
       </p>
       <p>
-        <a href="{{ 'legalNotice.website' | translate }}" target="_blank" rel="noopener noreferrer">
-          {{ 'legalNotice.website' | translate }}
+        <a
+          href="{{ 'legalNotice.website' | translate }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ "legalNotice.website" | translate }}
         </a>
       </p>
     </div>
 
-    <h2>{{ 'legalNotice.disclaimerTitle' | translate }}</h2>
-    <p>{{ 'legalNotice.disclaimer' | translate }}</p>
+    <h2>{{ "legalNotice.disclaimerTitle" | translate }}</h2>
+    <p>{{ "legalNotice.disclaimer" | translate }}</p>
 
-    <h2>{{ 'legalNotice.copyrightTitle' | translate }}</h2>
-    <p>{{ 'legalNotice.copyright' | translate }}</p>
+    <h2>{{ "legalNotice.copyrightTitle" | translate }}</h2>
+    <p>{{ "legalNotice.copyright" | translate }}</p>
   </section>
 </div>
 <app-footer></app-footer>

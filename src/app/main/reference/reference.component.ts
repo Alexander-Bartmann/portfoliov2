@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './reference.component.html',
-  styleUrl: './reference.component.scss'
+  styleUrl: './reference.component.scss',
 })
 export class ReferenceComponent {
   references = [
@@ -15,19 +15,19 @@ export class ReferenceComponent {
       nameKey: 'references.finn.name',
       projectKey: 'references.finn.project',
       textKey: 'references.finn.text',
-      bgImg: 'assets/img/Skill-Ellipse.png'
+      bgImg: 'assets/img/Skill-Ellipse.png',
     },
     {
       nameKey: 'references.lea.name',
       projectKey: '',
       textKey: 'references.lea.text',
-      bgImg: 'assets/img/Skill-Ellipse.png'
+      bgImg: 'assets/img/Skill-Ellipse.png',
     },
     {
       nameKey: 'references.tim.name',
       projectKey: '',
       textKey: 'references.tim.text',
-      bgImg: 'assets/img/Skill-Ellipse.png'
-    }
+      bgImg: 'assets/img/Skill-Ellipse.png',
+    },
   ];
 }

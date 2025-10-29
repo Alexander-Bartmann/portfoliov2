@@ -1,11 +1,16 @@
-@mixin display($display: flex, $justify: center, $align: center, $direction: column) {
-    display: $display;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
+@mixin display(
+  $display: flex,
+  $justify: center,
+  $align: center,
+  $direction: column
+) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
 
-@mixin content-padding(){
+@mixin content-padding() {
   padding: 5% 10% 0;
 }
 

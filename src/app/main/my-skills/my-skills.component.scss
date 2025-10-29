@@ -1,31 +1,30 @@
-@import './../../../variables.scss';
-@import './../../../mixin.scss';
+@import "./../../../variables.scss";
+@import "./../../../mixin.scss";
 
-
-main{
+main {
   @include display();
-  >h1{
+  > h1 {
     font-size: 5rem;
     font-weight: 600;
     color: $secondary;
   }
-  >section {
-    @include display( $direction: row);
+  > section {
+    @include display($direction: row);
     max-width: 1000px;
 
-        @media (max-width: 768px) {
-          @include display($direction: column);
-        }
-    >div{
+    @media (max-width: 768px) {
+      @include display($direction: column);
+    }
+    > div {
       flex: 1 1 50%;
     }
-    .skills{
+    .skills {
       @include display($direction: row);
       gap: 2rem;
       flex-wrap: wrap;
     }
 
-    .skill-card{
+    .skill-card {
       @include display();
     }
     .learning {
@@ -64,7 +63,5 @@ main{
         }
       }
     }
-
   }
 }
-

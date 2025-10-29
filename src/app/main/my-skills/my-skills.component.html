@@ -1,24 +1,22 @@
 <main id="skills">
-  <h1>{{ 'mySkills.title' | translate }}</h1>
+  <h1>{{ "mySkills.title" | translate }}</h1>
   <section>
     <div class="skills">
       @for (skill of skills; track skill.name) {
-        <div class="skill-card">
-          <img [src]="skill.img" [alt]="skill.name + ' logo'">
-          <p>{{ skill.name }}</p>
-        </div>
+      <div class="skill-card">
+        <img [src]="skill.img" [alt]="skill.name + ' logo'" />
+        <p>{{ skill.name }}</p>
+      </div>
       }
     </div>
 
     <div class="learning">
-      <img src="assets/img/Skill-Ellipse.png" alt="Ellipse" class="ellipse">
+      <img src="assets/img/Skill-Ellipse.png" alt="Ellipse" class="ellipse" />
 
       <div class="logos">
-        <p>{{ 'mySkills.learning' | translate }}</p>
-        <img src="assets/img/react.png" alt="React">
+        <p>{{ "mySkills.learning" | translate }}</p>
+        <img src="assets/img/react.png" alt="React" />
       </div>
     </div>
-
-
   </section>
 </main>

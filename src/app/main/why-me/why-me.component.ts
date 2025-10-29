@@ -7,7 +7,7 @@ import { NavigationService } from '../../navigation.service';
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './why-me.component.html',
-  styleUrl: './why-me.component.scss'
+  styleUrl: './why-me.component.scss',
 })
 export class WhyMeComponent {
   constructor(private navigation: NavigationService) {}

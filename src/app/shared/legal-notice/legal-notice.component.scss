@@ -1,16 +1,27 @@
-@import './../../../mixin.scss';
-@import './../../../variables.scss';
+@import "./../../../mixin.scss";
+@import "./../../../variables.scss";
 
 :host {
   left: 0;
   width: 100%;
   background-color: $main;
-  @include display($display: block, $justify: center, $align: center, $direction: column);
+  @include display(
+    $display: block,
+    $justify: center,
+    $align: center,
+    $direction: column
+  );
   overflow: hidden !important;
   animation: fadeIn 0.3s ease;
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .container {
@@ -21,7 +32,7 @@
     width: 100%;
   }
 
-  mat-icon{
+  mat-icon {
     cursor: pointer;
     color: $secondary;
     font-size: 2rem;
@@ -34,7 +45,7 @@
     }
   }
 
-  .legal-notice-content{
+  .legal-notice-content {
     max-width: 1920px;
   }
 
@@ -44,8 +55,12 @@
     padding: 2rem;
     @include display($align: flex-start);
 
-    .headline{
-      @include display($direction: row, $align: center, $justify: space-between);
+    .headline {
+      @include display(
+        $direction: row,
+        $align: center,
+        $justify: space-between
+      );
       width: 100%;
       margin-bottom: 1.5rem;
       @media (max-width: 768px) {
@@ -53,7 +68,8 @@
       }
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       color: $secondary;
       font-weight: 600;
       margin-bottom: 0.75rem;
@@ -117,7 +133,6 @@
   }
 
   @media (max-width: 768px) {
-
     section.legal-notice-section {
       h1 {
         font-size: 1.6rem;
