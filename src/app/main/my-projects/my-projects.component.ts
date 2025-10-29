@@ -40,7 +40,7 @@ export class MyProjectsComponent {
       ],
       projectImg: 'assets/img/Join.png',
       liveUrl: 'https://alexander-bartmann.de/Join',
-      githubUrl: 'https://github.com/Alexander-aartmann/Join'
+      githubUrl: 'https://github.com/Alexander-Bartmann/Join'
     },
     {
       id: 2,
