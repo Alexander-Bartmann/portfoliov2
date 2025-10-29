@@ -6,6 +6,7 @@ footer {
   color: $second-font;
   height: 15vh;
   width: 100%;
+  @include display();
 
   .container {
     @include display($justify: space-around, $align: center, $direction: row);
