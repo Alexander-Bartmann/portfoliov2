@@ -17,6 +17,9 @@ nav {
   width: 100%;
   color: $second-font;
   transition: box-shadow 0.3s ease;
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   /* Inhalt wird in .container zentriert und auf max-width beschränkt */
   .container {
@@ -28,10 +31,6 @@ nav {
     height: 100%;
     font-size: 26px;
     color: $second-font;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
 
     /* linke Sektion (Logo / Name) */
     > section:first-child {
