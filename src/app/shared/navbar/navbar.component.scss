@@ -9,120 +9,138 @@
   z-index: 1000;
 }
 
+/* Ersetze bisherigen nav-Layoutblock durch nav mit zentriertem .container */
 nav {
-  @include display($justify: space-around, $direction: row);
+  /* Hintergrund / full-width bleibt auf nav */
   background-color: $secondary;
   height: 10vh;
+  width: 100%;
   color: $second-font;
-  font-size: 26px;
   transition: box-shadow 0.3s ease;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+  /* Inhalt wird in .container zentriert und auf max-width beschränkt */
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @include display($justify: space-around, $direction: row);
+    align-items: center;
+    height: 100%;
+    font-size: 26px;
+    color: $second-font;
 
-  > section:first-child {
-    @include display();
-
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
+    @media (max-width: 768px) {
+      display: none;
     }
 
-    p {
-      margin: 0;
-      font-size: 0.9rem;
+    /* linke Sektion (Logo / Name) */
+    > section:first-child {
+      @include display();
+      gap: 1rem;
 
-      &:first-of-type {
-        font-weight: bold;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
       }
-    }
-  }
 
-  > section:nth-child(2) {
-    display: flex;
-    gap: 1.5rem;
+      p {
+        margin: 0;
+        font-size: 0.9rem;
 
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.3rem;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s ease;
-      position: relative;
-      color: $second-font;
-
-      &:hover {
-        color: $font;
-      }
-      &.active {
-        color: $font;
-        background-image: url("../../../assets/img/Ellipse24.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: #262e346c;
-          border-radius: 50%;
-          transform: rotate(15deg);
-          z-index: -1;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 20px;
-          height: 2px;
+        &:first-of-type {
+          font-weight: bold;
         }
       }
     }
-  }
 
-  > div {
-    display: flex;
-    gap: 0.5rem;
+    /* mittlere Navigations-Buttons */
+    > section:nth-child(2) {
+      display: flex;
+      gap: 1.5rem;
 
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-      position: relative;
-      min-width: 44px;
-      min-height: 36px;
-      @include display($display: inline-flex, $direction: row);
-      color: $second-font;
-
-      &:hover {
-        color: $font;
-      }
-
-      &.active {
-        color: $font;
-        background-image: url("../../../assets/img/Ellipse24.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
+      button {
+        background: none;
         border: none;
-        transform: translateY(-1px);
-      }
+        cursor: pointer;
+        font-size: 1.3rem;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+        position: relative;
+        color: $second-font;
 
-      &:focus {
-        outline: none;
+        &:hover {
+          color: $font;
+        }
+
+        &.active {
+          color: $font;
+          background-image: url("../../../assets/img/Ellipse24.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #262e346c;
+            border-radius: 50%;
+            transform: rotate(15deg);
+            z-index: -1;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+          }
+        }
+      }
+    }
+
+    /* rechte Sprache-Buttons */
+    > div {
+      display: flex;
+      gap: 0.5rem;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+        position: relative;
+        min-width: 44px;
+        min-height: 36px;
+        @include display($display: inline-flex, $direction: row);
+        color: $second-font;
+
+        &:hover {
+          color: $font;
+        }
+
+        &.active {
+          color: $font;
+          background-image: url("../../../assets/img/Ellipse24.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          border: none;
+          transform: translateY(-1px);
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

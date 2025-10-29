@@ -2,73 +2,61 @@
 @import "./../../../variables.scss";
 
 footer {
-  @include display($justify: space-around, $align: center, $direction: row);
   background-color: $secondary;
   color: $second-font;
   height: 15vh;
+  width: 100%;
 
-  section {
-    a {
-      text-decoration: none;
-      color: $second-font;
-      &:hover {
+  .container {
+    @include display($justify: space-around, $align: center, $direction: row);
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 100%;
+
+    section {
+      a {
+        text-decoration: none;
+        color: $second-font;
+        &:hover {
+          color: $font;
+        }
+      }
+      img {
+        width: 80px;
+      }
+    }
+
+    .middle {
+      @include display($direction: column, $align: center, $justify: center);
+      p {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+      .color {
         color: $font;
       }
     }
-    img {
-      width: 80px;
-    }
-  }
 
-  .middle {
-    @include display($direction: column, $align: center, $justify: center);
-    p {
-      font-size: 0.8rem;
-      margin: 0;
-    }
-    .color {
-      color: $font;
-    }
-  }
-
-  div {
-    @include display($direction: row);
-    figure {
-      margin: 1rem;
+    div {
+      @include display($direction: row);
+      figure {
+        margin: 1rem;
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
   footer {
-    @include display($direction: column);
     height: auto;
     padding: 2rem 1rem;
     gap: 1.5rem;
 
-    .middle {
-      order: 1;
-    }
-
-    .right {
-      order: 2;
-    }
-
-    .left {
-      order: 3;
-      @include display($direction: row, $justify: space-around);
-      width: 100%;
-      font-size: 0.9rem;
-    }
-
-    section,
-    div {
-      text-align: center;
-      align-items: center;
-    }
-
-    .right figure {
-      margin: 0.5rem;
+    .container {
+      @include display($direction: column);
+      gap: 1.5rem;
     }
   }
 }
