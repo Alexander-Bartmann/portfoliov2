@@ -1,27 +1,59 @@
-# Portfolio
+# 💼 Alexander Bartmann – Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.13.
+Willkommen in meinem persönlichen Portfolio!  
+Hier präsentiere ich meine Webprojekte, meinen Entwicklungsstil und meine Fähigkeiten als Frontend-Developer.
 
-## Development server
+🌐 **Live-Version:** [alexander-bartmann.de](https://alexander-bartmann.de)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular** – Framework für die gesamte SPA-Struktur  
+- **TypeScript** – starke Typisierung & saubere Architektur  
+- **HTML5 / SCSS** – semantisches Markup & modulare Styles  
+- **ngx-translate** – Mehrsprachigkeit (Deutsch / Englisch)  
+- **Responsive Design** – optimiert für Desktop & Mobile  
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✨ Features
 
-## Running unit tests
+- Mehrsprachige Oberfläche (DE / EN)
+- Sticky Navigation & dynamische Sections
+- Smooth Scroll Navigation mit Routing
+- Kontaktformular mit Mailversand (PHP Backend)
+- Projekte mit animierten Übergängen & SCSS-Variablenstruktur
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 📁 Projektstruktur
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+src/
+├── app/
+│ ├── components/
+│ │ ├── hero/
+│ │ ├── navbar/
+│ │ ├── my-projects/
+│ │ ├── contact/
+│ │ └── footer/
+│ └── navigation.service.ts
+├── assets/
+├── environments/
+└── index.html
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 🧩 Installation & Setup
+
+```bash
+# Repository klonen
+git clone https://github.com/<dein-username>/portfolio.git
+cd portfolio
+
+# Dependencies installieren
+npm install
+
+# Entwicklungsserver starten
+ng serve
