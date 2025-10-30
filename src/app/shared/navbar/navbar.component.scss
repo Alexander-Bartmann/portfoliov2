@@ -31,6 +31,9 @@ nav {
     height: 100%;
     font-size: 26px;
     color: $second-font;
+    @media (min-width: 2000px) {
+      @include display($justify: space-between, $direction: row);
+    }
 
     /* linke Sektion (Logo / Name) */
     > section:first-child {

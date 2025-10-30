@@ -38,23 +38,8 @@ export class ContactComponent {
   }
 
   isEmailValid(): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const validDomains = [
-      'gmail.com',
-      'gmx.de',
-      'gmx.net',
-      'outlook.de',
-      'outlook.com',
-      'web.de',
-      't-online.de',
-      'yahoo.com',
-      'icloud.com',
-    ];
-
-    if (!emailRegex.test(this.email)) return false;
-
-    const domain = this.email.split('@')[1]?.toLowerCase();
-    return validDomains.includes(domain);
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    return emailRegex.test(this.email.trim());
   }
 
   isFieldInvalid(field: string): boolean {
@@ -75,14 +60,13 @@ export class ContactComponent {
 
     this.isSending = true;
     const payload = this.buildPayload();
-
     this.sendMail(payload);
   }
 
   private isFormValid(): boolean {
     return (
       this.name.trim().length > 0 &&
-      this.email.trim().length > 0 &&
+      this.isEmailValid() &&
       this.message.trim().length > 0 &&
       this.agreed
     );

@@ -160,7 +160,8 @@ main {
       }
 
       .form-actions {
-        @include display($direction: row, $justify: flex-end);
+        @include display($align: end, $justify: flex-end);
+        gap: 1rem;
 
         .send-button {
           background-color: $secondary;

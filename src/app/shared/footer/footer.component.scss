@@ -14,7 +14,9 @@ footer {
     padding: 0 1rem;
     box-sizing: border-box;
     width: 100%;
-
+    @media (min-width: 2000px) {
+      @include display($justify: space-between, $direction: row);
+    }
     section {
       a {
         text-decoration: none;
