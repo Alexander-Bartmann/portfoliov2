@@ -198,38 +198,31 @@ main {
       border: 2px solid $secondary;
       cursor: pointer;
       transform: rotateX(180deg);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      animation: float 3s ease-in-out infinite;
 
       img {
-        transition: transform 0.2s ease;
-      }
-
-      &:hover {
-        box-shadow: 0 0 10px rgba($secondary, 0.5);
-        animation: subtle-shake 0.4s ease-in-out;
-
-        img {
-          transform: translateY(-2px);
-        }
+        animation: float-img 3s ease-in-out infinite;
       }
     }
   }
 
-  @keyframes subtle-shake {
-    0% {
-      transform: rotateX(180deg) translateX(0);
-    }
-    25% {
-      transform: rotateX(180deg) translateX(-2px);
+  @keyframes float {
+    0%,
+    100% {
+      transform: rotateX(180deg) translateY(0);
     }
     50% {
-      transform: rotateX(180deg) translateX(2px);
+      transform: rotateX(180deg) translateY(8px);
     }
-    75% {
-      transform: rotateX(180deg) translateX(-1px);
-    }
+  }
+
+  @keyframes float-img {
+    0%,
     100% {
-      transform: rotateX(180deg) translateX(0);
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
     }
   }
 }
