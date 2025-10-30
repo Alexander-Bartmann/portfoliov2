@@ -172,6 +172,37 @@ main {
         padding: 16px 8px;
         border: 2px solid $secondary;
         cursor: pointer;
+
+        img {
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          box-shadow: 0 0 10px rgba($secondary, 0.5);
+          animation: subtle-shake 0.4s ease-in-out;
+
+          img {
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    @keyframes subtle-shake {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-2px);
+      }
+      50% {
+        transform: translateX(2px);
+      }
+      75% {
+        transform: translateX(-1px);
+      }
+      100% {
+        transform: translateX(0);
       }
     }
   }
